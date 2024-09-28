@@ -139,7 +139,7 @@
     padding: 50px 0;
     background-size: cover;
     background-position: center;
-    height: 40vh;
+    height: 100vh;
     margin: 0;
     display: flex;
     align-items: center;
@@ -148,6 +148,7 @@
     position: relative;
     z-index: 0;
 }
+
 
 .hero-title {
     font-size: 3rem;
