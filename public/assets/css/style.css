@@ -1,4 +1,4 @@
-/* CUSTOM CSS */
+/*  ================= CUSTOM CSS */
 .text-blue-dark {
     color: #013B93;
 }
@@ -7,8 +7,30 @@
     color: #B11116;
 }
 
+.my-6 {
+    margin-bottom: 60px;
+    margin-top: 60px;
+}
 
-/* END */
+.bg-dark-blue {
+    background-color: #013B93;
+}
+
+.btn-dark-blue {
+    background-color: #013B93;
+    color: white;
+}
+
+.btn-dark-blue:hover {
+    background-color: #032b66;
+    color: white;
+}
+
+.text-bg-dark-blue {
+    background-color: #013B93;
+}
+
+/* ============ END */
 
 
 .body {
@@ -20,19 +42,95 @@
     /* Adjust the height of the logo */
 }
 
+/* Style for navbar links */
+/* Reset default Bootstrap link styling */
+.navbar-nav .nav-link.active {
+    color: #6d6d6d;
+    /* Keep the custom link color */
+    text-decoration: none;
+    /* Remove the default blue underline */
+}
+
+/* Make sure the parent .nav-item has relative positioning for the pseudo-element */
+.navbar-nav .nav-item {
+    position: relative;
+}
+
+/* Add the underline effect */
+.navbar-nav .nav-item::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px;
+    /* Adjust as needed for spacing below the text */
+    height: 3px;
+    /* Thickness of the underline */
+    background-color: transparent;
+    /* Invisible by default */
+    transition: background-color 0.3s ease, width 0.3s ease;
+    width: 0%;
+    /* Initial width is 0 */
+}
+
+/* Active or hover state */
+/* Style the links */
 .navbar-nav .nav-link {
     font-size: 18px;
     font-weight: bold;
     color: #6d6d6d;
-    /* Custom link color */
+    position: relative;
+    /* Required for the underline to position correctly */
+    padding-bottom: 5px;
+    /* Adjust the space between the text and the underline */
+    text-decoration: none;
+    /* Remove any underline */
 }
+
+/* Active state styling */
+.navbar-nav .nav-link.active {
+    color: #6d6d6d;
+    /* Ensure active link color is the same */
+}
+/* Reset default Bootstrap underline */
+.nav-link {
+    color: #6d6d6d;
+    text-decoration: none; /* Remove default underline */
+    position: relative;
+}
+
+/* Ensure underline appears on hover */
+.nav-item::after, .nav-link.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -14px;  /* Adjust as needed */
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    height: 3px;   /* Thickness of the underline */
+    background-color: transparent;
+    width: 0;  /* Initial width is 0 */
+    transition: background-color 0.3s ease, width 0.3s ease;
+}
+
+/* On hover and active link, show the underline */
+.nav-link.active::after {
+    background-color: #5499FF; /* Color of the underline */
+    width: 100%; /* Full width of the nav item */
+}
+.nav-link:hover{
+    color:#292929 ;
+}
+/* Active state */
+.nav-link.active {
+    color: #6d6d6d;
+    text-decoration: none; /* Ensure no underline on active */
+}
+
 
 .content-about {
     margin-top: 60px;
-}
-
-.navbar-nav .nav-link.active {
-    text-decoration: underline;
 }
 
 /* Custom styles for the section */
@@ -118,4 +216,94 @@
     /* Fully visible */
     transform: translateY(0) scale(1) !important;
     /* Move to normal position and scale up */
+}
+
+.pelatihanseminar {
+    margin-top: 150px;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    opacity: 0.5;
+    /* Slightly transparent on hover */
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    opacity: 1;
+    /* Slightly transparent on hover */
+}
+
+.swiper-pagination {
+    top: 1000px;
+    bottom: 500px;
+}
+
+.seminar-text {
+    color: #5E5E5E;
+    font-weight: 400;
+}
+
+.card-kerja-sama {
+    border-radius: 60px;
+}
+
+.custom-table {
+    width: 100%;
+    border: none;
+    /* Remove borders */
+}
+
+.custom-table td {
+    padding: 2px 12px;
+    /* Add padding for better spacing */
+    border: none;
+    /* Remove cell borders */
+    vertical-align: top;
+    /* Align text at the top of the cell */
+    text-align: left;
+    /* Align text to the left */
+}
+
+.custom-table td:first-child {
+    font-weight: bold;
+    /* Make the label bold */
+    width: 30%;
+    /* Set width for the first column */
+}
+
+.custom-table td:not(:first-child) {
+    padding-left: 10px;
+    /* Add padding for value cells */
+}
+
+.mitraImg {
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: filter 0.5s ease;
+}
+
+.mitraImg:hover {
+    filter: grayscale(0%);
 }
