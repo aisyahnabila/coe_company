@@ -1,0 +1,106 @@
+/* CUSTOM CSS */
+.text-blue-dark {
+    color: #013B93;
+}
+
+.text-danger {
+    color: #B11116;
+}
+
+
+/* END */
+
+
+.body {
+    font-family: "Poppins", sans-serif;
+}
+
+.navbar-brand img {
+    max-height: 50px;
+    /* Adjust the height of the logo */
+}
+
+.navbar-nav .nav-link {
+    font-size: 18px;
+    font-weight: bold;
+    color: #6d6d6d;
+    /* Custom link color */
+}
+
+.content-about {
+    margin-top: 60px;
+}
+
+.navbar-nav .nav-link.active {
+    text-decoration: underline;
+}
+
+/* Custom styles for the section */
+.hero-section {
+    background-color: #f8f9fa;
+    padding: 50px 0;
+}
+
+.text-intro {
+    font-size: 20px;
+}
+
+.lead {
+    font-weight: bold;
+}
+
+.hero-section img {
+    max-width: 100%;
+    height: auto;
+}
+
+.info-section h3 {
+    margin-bottom: 30px;
+}
+
+.info-card {
+    background-color: #82B4FD;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    height: 28rem;
+    opacity: 0;
+    /* Initially hidden */
+    transform: translateY(40px) scale(0.95);
+    /* Slightly move down and scale down */
+    transition: opacity 0.8s cubic-bezier(0.65, 0.05, 0.36, 1), transform 0.8s cubic-bezier(0.65, 0.05, 0.36, 1);
+    /* Longer, smoother animation */
+}
+
+.info-card img {
+    margin-bottom: 15px;
+}
+
+.info-card h5 {
+    color: #FFFFFF;
+}
+
+.info-card p {
+    color: #FFFFFF;
+}
+
+.bg-icons {
+    background-color: #5499FF;
+    width: 35%;
+    padding: 20px;
+    font-size: 50px;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+
+/* Animation when in view */
+.fade-in {
+    opacity: 1 !important;
+    /* Fully visible */
+    transform: translateY(0) scale(1) !important;
+    /* Move to normal position and scale up */
+}
