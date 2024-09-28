@@ -2,35 +2,33 @@
 <footer class="footer bg-light py-5">
     <div class="container">
         <div class="row">
-
             <!-- Logo Section Start-->
-            <div class="col-md-4 text-center">
-                <img src="{{ asset('assets/img/logo_telU_1.png') }}" alt="Logo CoE" width="240" height="100"
-                    class="mb-3">
-                <img src="{{ asset('assets/img/logo.png') }}" alt="Logo CoE" width="240" height="100"
-                    class="mb-3">
+            <div class="col-md-4 text-Center">
+                <img src="{{ asset('assets/img/logo_telU_1.png') }}" alt="Logo CoE" class="mb-3"
+                    style="width: 240px; height: auto;">
+                <img src="{{ asset('assets/img/logo.png') }}" alt="Logo TelU" class="mb-3"
+                    style="width: 240px; height: auto;">
             </div>
             <!-- Logo Section End -->
 
-            <!-- Contact Information Section Start-->
-            <div class="col-md-4 text-left">
+            <!-- Contact Information Section Start -->
+            <div class="col-md-4">
                 <h5 class="mb-3">Informasi Kontak</h5>
                 <p>Email: coe.bht@gmail.com</p>
                 <p>Whatsapp: 0822-9597-7713</p>
-                <p>Instagram: https://www.instagram.com/coe.bht/</p>
-                <p></p>
+                <p>Instagram: <a href="https://www.instagram.com/coe.bht/">@coe.bht</a></p>
             </div>
             <!-- Contact Information Section End -->
 
-            <!-- Google Maps Section -->
+            <!-- Google Maps Section Start -->
             <div class="col-md-4 text-center">
                 <h5 class="mb-3">Lokasi Kami</h5>
                 <div class="map-container">
-                    {{-- Iframe GMaps --}}
+                    <iframe src="https://www.google.com/maps/embed?pb=#" width="100%" height="200" frameborder="0"
+                        style="border:0;" allowfullscreen=""></iframe>
                 </div>
             </div>
-            <!-- Google Maps Section End-->
-
+            <!-- Google Maps Section End -->
         </div>
     </div>
 </footer>
