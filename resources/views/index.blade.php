@@ -18,7 +18,7 @@
     <!-- Info Section -->
     <section class="info-section py-5">
         <div class="container">
-            <div class="tentang my-5">
+            <div class="my-5" id="tentang">
                 <h3 class="fw-bold text-blue-dark text-center">TENTANG BHT</h3>
                 <div class="row content-about my-4">
                     <div class="col-md-4">
@@ -79,7 +79,9 @@
                     </div>
                 </div>
             </div>
-            <div class="pelatihanseminar">
+
+            {{-- ================ KERJA SAMA ============== --}}
+            <div id="training">
                 <h3 class="fw-bold text-blue-dark text-center mb-5">PELATIHAN SEMINAR</h3>
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
@@ -138,8 +140,6 @@
                                             <p class="mb-0 text">20 Mei. 2024</p>
                                         </div>
                                     </div>
-
-
                                 </div>
                             </div>
                         </div>
@@ -230,7 +230,8 @@
 
                                     </div>
 
-                                    <span class="badge text-bg-dark-blue text-center w-100 mt-4">Kolaborasi Luar Negeri (LN)</span>
+                                    <span class="badge text-bg-dark-blue text-center w-100 mt-4">Kolaborasi Luar Negeri
+                                        (LN)</span>
                                 </div>
                                 <div class="card-footer text-body-secondary">
                                     <div class="row text-secondary mt-3">
@@ -284,7 +285,8 @@
 
                                     </div>
 
-                                    <span class="badge text-bg-dark-blue text-center w-100 mt-4">Kolaborasi Luar Negeri (LN)</span>
+                                    <span class="badge text-bg-dark-blue text-center w-100 mt-4">Kolaborasi Luar Negeri
+                                        (LN)</span>
                                 </div>
                                 <div class="card-footer text-body-secondary">
                                     <div class="row text-secondary mt-3">
@@ -337,7 +339,8 @@
                                         </table>
 
                                     </div>
-                                    <span class="badge text-bg-dark-blue text-center w-100 mt-4">Kolaborasi Luar Negeri (LN)</span>
+                                    <span class="badge text-bg-dark-blue text-center w-100 mt-4">Kolaborasi Luar Negeri
+                                        (LN)</span>
                                 </div>
                                 <div class="card-footer text-body-secondary">
                                     <div class="row text-secondary mt-3">
@@ -391,7 +394,8 @@
 
                                     </div>
 
-                                    <span class="badge text-bg-dark-blue text-center w-100 mt-4">Kolaborasi Luar Negeri (LN)</span>
+                                    <span class="badge text-bg-dark-blue text-center w-100 mt-4">Kolaborasi Luar Negeri
+                                        (LN)</span>
                                 </div>
                                 <div class="card-footer text-body-secondary">
                                     <div class="row text-secondary mt-3">
@@ -417,6 +421,8 @@
                 </div>
             </div>
         </section>
+
+
         <div class="container">
             {{-- MITRA --}}
             <div class="py-3">
@@ -425,32 +431,41 @@
                     <div class="swiper-wrapper">
                         <!-- Swiper slide with images -->
                         <div class="swiper-slide">
-                            <img src="{{ asset('assets/img/mitra/ipgeri.png') }}" class="mitraImg" alt="Mitra 1" style="width: 100%; height: auto;">
+                            <img src="{{ asset('assets/img/mitra/ipgeri.png') }}" class="mitraImg" alt="Mitra 1"
+                                style="width: 100%; height: auto;">
                         </div>
                         <div class="swiper-slide">
-                            <img src="{{ asset('assets/img/mitra/up.png') }}" class="mitraImg" alt="Mitra 1" style="width: 100%; height: auto;">
+                            <img src="{{ asset('assets/img/mitra/up.png') }}" class="mitraImg" alt="Mitra 1"
+                                style="width: 100%; height: auto;">
                         </div>
                         <div class="swiper-slide">
-                            <img src="{{ asset('assets/img/mitra/ipgeri.png') }}" class="mitraImg" alt="Mitra 1" style="width: 100%; height: auto;">
+                            <img src="{{ asset('assets/img/mitra/ipgeri.png') }}" class="mitraImg" alt="Mitra 1"
+                                style="width: 100%; height: auto;">
                         </div>
                         <div class="swiper-slide">
-                            <img src="{{ asset('assets/img/mitra/ipgeri.png') }}" class="mitraImg" alt="Mitra 1" style="width: 100%; height: auto;">
+                            <img src="{{ asset('assets/img/mitra/ipgeri.png') }}" class="mitraImg" alt="Mitra 1"
+                                style="width: 100%; height: auto;">
                         </div>
                         <div class="swiper-slide">
-                            <img src="{{ asset('assets/img/mitra/ipgeri.png') }}" class="mitraImg" alt="Mitra 1" style="width: 100%; height: auto;">
+                            <img src="{{ asset('assets/img/mitra/ipgeri.png') }}" class="mitraImg" alt="Mitra 1"
+                                style="width: 100%; height: auto;">
                         </div>
                         <div class="swiper-slide">
-                            <img src="{{ asset('assets/img/mitra/ipgeri.png') }}" class="mitraImg" alt="Mitra 1" style="width: 100%; height: auto;">
+                            <img src="{{ asset('assets/img/mitra/ipgeri.png') }}" class="mitraImg" alt="Mitra 1"
+                                style="width: 100%; height: auto;">
                         </div>
                         <div class="swiper-slide">
-                            <img src="{{ asset('assets/img/mitra/ipgeri.png') }}" class="mitraImg" alt="Mitra 1" style="width: 100%; height: auto;">
+                            <img src="{{ asset('assets/img/mitra/ipgeri.png') }}" class="mitraImg" alt="Mitra 1"
+                                style="width: 100%; height: auto;">
                         </div>
 
                     </div>
+                </div>
             </div>
-        </div>
     </section>
+
     <script>
+        // for card animation
         document.addEventListener("DOMContentLoaded", function() {
             const cards = document.querySelectorAll('.info-card');
 
@@ -471,6 +486,40 @@
             cards.forEach(card => {
                 observer.observe(card);
             });
+        });
+
+        // styling scroll menu navbar
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbarLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+            navbarLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+
+                    const href = this.getAttribute('href');
+
+                    if (href.includes('#')) {
+                        e.preventDefault();
+
+                        const targetId = href.split('#')[1];
+                        const targetElement = document.getElementById(targetId);
+
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+
+            if (window.location.hash) {
+                let targetElement = document.querySelector(window.location.hash);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            }
         });
     </script>
 @endsection
