@@ -32,6 +32,9 @@
 
 /* ============ END */
 
+html {
+    scroll-behavior: smooth;
+}
 
 .body {
     font-family: "Poppins", sans-serif;
@@ -92,40 +95,51 @@
     color: #6d6d6d;
     /* Ensure active link color is the same */
 }
+
 /* Reset default Bootstrap underline */
 .nav-link {
     color: #6d6d6d;
-    text-decoration: none; /* Remove default underline */
+    text-decoration: none;
+    /* Remove default underline */
     position: relative;
 }
 
 /* Ensure underline appears on hover */
-.nav-item::after, .nav-link.active::after {
+.nav-item::after,
+.nav-link.active::after {
     content: '';
     position: absolute;
     left: 0;
     right: 0;
-    bottom: -14px;  /* Adjust as needed */
+    bottom: -14px;
+    /* Adjust as needed */
     border-bottom-left-radius: 2px;
     border-bottom-right-radius: 2px;
-    height: 3px;   /* Thickness of the underline */
+    height: 3px;
+    /* Thickness of the underline */
     background-color: transparent;
-    width: 0;  /* Initial width is 0 */
+    width: 0;
+    /* Initial width is 0 */
     transition: background-color 0.3s ease, width 0.3s ease;
 }
 
 /* On hover and active link, show the underline */
 .nav-link.active::after {
-    background-color: #5499FF; /* Color of the underline */
-    width: 100%; /* Full width of the nav item */
+    background-color: #5499FF;
+    /* Color of the underline */
+    width: 100%;
+    /* Full width of the nav item */
 }
-.nav-link:hover{
-    color:#292929 ;
+
+.nav-link:hover {
+    color: #292929;
 }
+
 /* Active state */
 .nav-link.active {
     color: #6d6d6d;
-    text-decoration: none; /* Ensure no underline on active */
+    text-decoration: none;
+    /* Ensure no underline on active */
 }
 
 
@@ -308,6 +322,7 @@
 .mitraImg:hover {
     filter: grayscale(0%);
 }
+
 /* footer styling */
 .footer {
     background-color: #f8f9fa;
@@ -315,19 +330,23 @@
     color: #333;
     margin-top: 50px;
 }
+
 .footer h5 {
     font-size: 1.2rem;
     font-weight: bold;
 }
+
 .footer p {
     font-size: 0.9rem;
     margin-bottom: 10px;
 }
+
 .footer .map-container iframe {
     width: 100%;
     height: 200px;
     border: none;
 }
+
 .footer img {
     max-width: 100%;
     height: auto;

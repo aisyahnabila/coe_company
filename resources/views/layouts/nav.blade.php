@@ -10,22 +10,28 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('index') ? 'active' : '' }}" href="{{ route('index') }}">Home</a>
+                    <a class="nav-link {{ request()->routeIs('index') ? 'active' : '' }}"
+                        href="{{ route('index') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('pelatihan') ? 'active' : '' }}" href="#">Pelatihan & Seminar</a>
+                    <a class="nav-link {{ request()->routeIs('training') ? 'active' : '' }}"
+                        href="{{ url('/') }}#training">Pelatihan & Seminar</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('penelitian') ? 'active' : '' }}"
+                        href="#">Penelitian</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('penelitian') ? 'active' : '' }}" href="#">Penelitian</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('kerjasama') ? 'active' : '' }}" href="#">Kerjasama</a>
+                    <a class="nav-link {{ request()->routeIs('kerjasama') ? 'active' : '' }}"
+                        href="#">Kerjasama</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ request()->routeIs('pengmas') ? 'active' : '' }}" href="#">Pengmas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('staff') ? 'active' : '' }}" href="{{ route('staff') }}">Staf</a>
+                    <a class="nav-link {{ request()->routeIs('staff') ? 'active' : '' }}"
+                        href="{{ route('staff') }}">Staf</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ request()->routeIs('tentang') ? 'active' : '' }}" href="#">Tentang</a>
