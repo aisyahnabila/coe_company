@@ -312,7 +312,10 @@ html {
     padding-left: 10px;
     /* Add padding for value cells */
 }
-
+.staff-button{
+    background: transparent;
+    border: 0px;
+}
 .mitraImg {
     object-fit: contain;
     filter: grayscale(100%);
@@ -351,3 +354,4 @@ html {
     max-width: 100%;
     height: auto;
 }
+
