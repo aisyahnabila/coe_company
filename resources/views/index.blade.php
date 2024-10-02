@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <!-- Header Section -->
-    <section class="my-5 text-center bg-white">
+    <section class=" text-center bg-white">
         <div class="container py-4">
             <div class="row align-items-center">
                 <div class="col-md-6 text-start">
@@ -80,7 +80,7 @@
                 </div>
             </div>
 
-            {{-- ================ KERJA SAMA ============== --}}
+            {{-- ================ SEMINAR============== --}}
             <div id="training">
                 <h3 class="fw-bold text-blue-dark text-center mb-5">PELATIHAN SEMINAR</h3>
                 <div class="swiper mySwiper">
@@ -422,7 +422,116 @@
             </div>
         </section>
 
+        <div class="container">
 
+            {{-- ================ SEMINAR============== --}}
+            <div class="py-5" id="training">
+                <h3 class="fw-bold text-blue-dark text-center mb-5">PENGABDIAN MASYARAKAT</h3>
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="card border-0">
+                                <img src="{{ asset('assets/img/4 1.png') }}" class="card-img-top" alt="Slide Image">
+                                <div class="card-body">
+                                    <div class="text-start">
+                                        <h5 class="card-title fw-bold">Card Title</h5>
+                                        <p class="card-text seminar-text">This is a brief description of the content in the
+                                            card. It
+                                            provides some interesting information.</p>
+                                    </div>
+
+                                    <a href="#" class="btn btn-dark-blue w-100 mt-5 rounded-3">LINK REGISTRASI</a>
+                                    <div class="row text-secondary mt-3">
+                                        <div class="col-6 d-flex align-items-center"> <!-- Use col-6 for all sizes -->
+                                            <img class="rounded-circle me-2" src="{{ asset('assets/img/Logo BHT.png') }}"
+                                                style="width: 30px;" alt="">
+                                            <p class="mb-0 text">Denny Daffa asd</p>
+                                        </div>
+
+                                        <div class="col-6 d-flex align-items-center justify-content-start">
+                                            <!-- Ensure flex alignment -->
+                                            <i class="bi bi-clock me-2"></i>
+                                            <p class="mb-0 text">20 Mei. 2024</p>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card border-0">
+                                <img src="{{ asset('assets/img/4 1.png') }}" class="card-img-top" alt="Slide Image">
+                                <div class="card-body">
+                                    <div class="text-start">
+                                        <h5 class="card-title fw-bold">Card Title</h5>
+                                        <p class="card-text seminar-text">This is a brief description of the content in the
+                                            card. It
+                                            provides some interesting information.</p>
+                                    </div>
+
+                                    <a href="#" class="btn btn-dark-blue w-100 mt-5 rounded-3">LINK REGISTRASI</a>
+                                    <div class="row text-secondary mt-3">
+                                        <div class="col-6 d-flex align-items-center"> <!-- Use col-6 for all sizes -->
+                                            <img class="rounded-circle me-2" src="{{ asset('assets/img/Logo BHT.png') }}"
+                                                style="width: 30px;" alt="">
+                                            <p class="mb-0 text">Denny Daffa asd</p>
+                                        </div>
+
+                                        <div class="col-6 d-flex align-items-center justify-content-start">
+                                            <!-- Ensure flex alignment -->
+                                            <i class="bi bi-clock me-2"></i>
+                                            <p class="mb-0 text">20 Mei. 2024</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card border-0">
+                                <img src="{{ asset('assets/img/4 1.png') }}" class="card-img-top" alt="Slide Image">
+                                <div class="card-body">
+                                    <div class="text-start">
+                                        <h5 class="card-title fw-bold">Card Title</h5>
+                                        <p class="card-text seminar-text">This is a brief description of the content in the
+                                            card. It
+                                            provides some interesting information.</p>
+                                    </div>
+
+                                    <a href="#" class="btn btn-dark-blue w-100 mt-5 rounded-3">LINK REGISTRASI</a>
+                                    <div class="row text-secondary mt-3">
+                                        <div class="col-6 d-flex align-items-center"> <!-- Use col-6 for all sizes -->
+                                            <img class="rounded-circle me-2" src="{{ asset('assets/img/Logo BHT.png') }}"
+                                                style="width: 30px;" alt="">
+                                            <p class="mb-0 text">Denny Daffa asd</p>
+                                        </div>
+
+                                        <div class="col-6 d-flex align-items-center justify-content-start">
+                                            <!-- Ensure flex alignment -->
+                                            <i class="bi bi-clock me-2"></i>
+                                            <p class="mb-0 text">20 Mei. 2024</p>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="swiper-slide">Slide 4</div>
+                        <div class="swiper-slide">Slide 5</div>
+                        <div class="swiper-slide">Slide 6</div>
+                        <div class="swiper-slide">Slide 7</div>
+                        <div class="swiper-slide">Slide 8</div>
+                        <div class="swiper-slide">Slide 9</div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination mt-5"></div>
+                </div>
+            </div>
+        </div>
         <div class="container">
             {{-- MITRA --}}
             <div class="py-3">

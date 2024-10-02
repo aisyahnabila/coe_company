@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\TrainingController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TrainingController;
 
 // route in index
 Route::get('/', function () {
@@ -14,3 +15,7 @@ Route::get('/staff', function () {
 
 Route::get('/training', [TrainingController::class, 'index'])->name('training');
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
