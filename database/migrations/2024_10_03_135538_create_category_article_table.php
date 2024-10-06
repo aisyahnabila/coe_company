@@ -13,8 +13,6 @@ return new class extends Migration {
         Schema::create('category_article', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->unsignedBigInteger('category_id')->nullable()->after('id');
-            $table->foreign('category_id')->references('id')->on('category_article')->onDelete('cascade');
             $table->timestamps();
         });
     }

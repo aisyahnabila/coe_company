@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Article;
 use App\Models\CategoryArticle;
+use Auth;
 use Illuminate\Http\Request;
+use Storage;
 
 class ArticleController extends Controller
 {
@@ -32,6 +34,8 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
+
         $validatedData = $request->validate([
             'title' => 'required|string|max:255',
             'content' => 'required',
@@ -40,13 +44,17 @@ class ArticleController extends Controller
             'category_id' => 'required|exists:category_article,id',
         ]);
 
-        // Menyimpan gambar ke direktori
+        //using user_id, the user who is logged in
+        $validatedData['user_id'] = Auth::id();
+
+        // save img to directory
         if ($request->hasFile('featured_img')) {
             $validatedData['featured_img'] = $request->file('featured_img')->store('images', 'public');
         }
 
+        // save article
         Article::create($validatedData);
-        return redirect()->route('admin.articles.index')->with('success', 'Article created successfully!');
+        return redirect()->route('articles.index')->with('success', 'Article created successfully!');
     }
 
     /**
@@ -62,7 +70,7 @@ class ArticleController extends Controller
      */
     public function edit(string $id)
     {
-        $article = Article::find($id);
+        $article = Article::findOrFail($id);
         $categories = CategoryArticle::all();
         return view('admin.articles.edit', compact('article', 'categories'));
     }
@@ -70,28 +78,42 @@ class ArticleController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
+
         $request->validate([
-            'title' => 'required|max:255',
+            'title' => 'required|string|max:255',
             'content' => 'required',
-            'slug' => 'required|unique:articles,slug,' . $id, // Pastikan slug unik kecuali artikel yang sedang di-edit
-            'featured_img' => 'sometimes|image',
+            'slug' => 'required|unique:articles,slug,' . $id,
+            'featured_img' => 'nullable|image',
             'category_id' => 'required|exists:category_article,id',
         ]);
 
-        $article = Article::firstOrFail($id);
+        $article = Article::findOrFail($id);
 
-        // Jika ada gambar baru, maka simpan dan replace gambar lama
+        // Cek jika ada gambar baru, simpan dan replace gambar lama
         if ($request->hasFile('featured_img')) {
+            // Hapus gambar lama jika ada
+            if ($article->featured_img) {
+                Storage::disk('public')->delete($article->featured_img);
+            }
             $validatedData['featured_img'] = $request->file('featured_img')->store('images', 'public');
+        } else {
+            // Jika tidak ada gambar baru, gunakan gambar lama
+            $validatedData['featured_img'] = $article->featured_img;
         }
 
+        // Pastikan semua data yang diperlukan dimasukkan
+        $validatedData['title'] = $request->input('title');
+        $validatedData['content'] = $request->input('content');
+        $validatedData['slug'] = $request->input('slug');
+        $validatedData['category_id'] = $request->input('category_id');
+
+
+        // dd($validatedData);
+
         $article->update($validatedData);
-
-        // $article = Article::find($id);
-        // $article->update($request->all());
-
+        // dd($article);
         return redirect()->route('articles.index')->with('success', 'Article updated successfully.');
     }
 

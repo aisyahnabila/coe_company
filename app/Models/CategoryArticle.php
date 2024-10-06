@@ -13,6 +13,7 @@ class CategoryArticle extends Model
 
     protected $fillable = ['name'];
 
+    // Relasi ke artikel
     public function articles()
     {
         return $this->hasMany(Article::class, 'category_id');
