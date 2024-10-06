@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+@vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -52,6 +53,7 @@
     <!-- fixed-top-->
     @include('admin.layouts.bar')
 
+    {{-- admin-content --}}
     <div class="app-content content">
         @yield('admin-content')
     </div>
