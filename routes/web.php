@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\Admin\ArticleController;
+use App\Http\Controllers\Admin\PartnershipController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TrainingController;
 
-// route in index
+// route for globar user
 Route::get('/', function () {
     return view('index');
 })->name('index');
@@ -13,9 +15,16 @@ Route::get('/staff', function () {
     return view('employee');
 })->name('staff');
 
-Route::get('/training', [TrainingController::class, 'index'])->name('training');
 
+// route for CMS
 
 Auth::routes();
+Route::prefix('admin')->middleware('auth')->group(function () {
+    Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::resource('articles', ArticleController::class);
+    Route::get('/admin/articles', [ArticleController::class, 'index'])->name('articles.index');
+
+    Route::resource('partnerships', PartnershipController::class);
+});
+
