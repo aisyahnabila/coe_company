@@ -5,38 +5,35 @@
 
         <div class="row">
             <div class="col-md-12">
-                <h1 class="mb-2">Articles</h1>
+                <h1 class="mb-2">Categories</h1>
 
-                <!-- Tombol Create New Article -->
-                <a href="{{ route('articles.create') }}" class="btn btn-primary mb-2">
-                    <i class="feather icon-plus"></i> Create New Article
+                <!-- Tombol Create New Category -->
+                <a href="{{ route('categories.create') }}" class="btn btn-primary mb-2">
+                    <i class="feather icon-plus"></i> Add New Category
                 </a>
 
-                <!-- Tabel Artikel -->
+                <!-- Tabel Kategori -->
                 <div class="table-responsive">
                     <table class="table table-bordered table-hover">
                         <thead class="thead-dark">
                             <tr>
-                                <th>Title</th>
-                                <th>Category</th>
-                                <th>Created At</th>
+                                <th>Category Name</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($articles as $article)
+                            @foreach ($categories as $category)
                                 <tr>
-                                    <td>{{ $article->title }}</td>
-                                    <td>{{ $article->category->name }}</td>
-                                    <td>{{ $article->created_at->format('d M Y') }}</td>
+                                    <td>{{ $category->name }}</td>
                                     <td>
                                         <!-- Tombol Edit -->
-                                        <a href="{{ route('articles.edit', $article->id) }}" class="btn btn-sm btn-warning">
+                                        <a href="{{ route('categories.edit', $category->id) }}"
+                                            class="btn btn-sm btn-warning">
                                             <i class="feather icon-edit"></i> Edit
                                         </a>
 
                                         <!-- Tombol Delete -->
-                                        <form action="{{ route('articles.destroy', $article->id) }}" method="POST"
+                                        <form action="{{ route('categories.destroy', $category->id) }}" method="POST"
                                             style="display:inline;">
                                             @csrf
                                             @method('DELETE')

@@ -62,9 +62,8 @@
             <li class="nav-item">
                 <a href="#"><i class="icon-layers"></i><span class="menu-title">Content Article</span></a>
                 <ul class="menu-content">
-                    <li><a class="menu-item" href="{{ route('articles.index') }}">Daftar</a></li>
-                    <li><a class="menu-item" href="{{ route('articles.create') }}">Tambah Kategori Artikel</a></li>
-                    {{-- <li><a class="menu-item" href="{{ route('categories.index') }}">Kategori</a></li> --}}
+                    <li><a class="menu-item" href="{{ route('articles.index') }}">Daftar Artikel</a></li>
+                    <li><a class="menu-item" href="{{ route('categories.index') }}">Kategori Artikel</a></li>
                 </ul>
             </li>
 

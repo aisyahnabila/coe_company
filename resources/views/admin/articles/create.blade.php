@@ -15,17 +15,12 @@
                             <!-- Title Field -->
                             <div class="form-group">
                                 <label for="title">Title</label>
-                                <input type="text" class="form-control @error('title') is-invalid @enderror"
-                                    id="title" name="title" value="{{ old('title') }}" required>
-                                @error('title')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
+                                <input type="text" class="form-control" id="title" name="title"
+                                    value="{{ old('title') }}" required>
                             </div>
 
                             <!-- Category Field -->
-                            <div class="form-group">
+                            {{-- <div class="form-group">
                                 <label for="category">Category</label>
                                 <select class="form-control @error('category_id') is-invalid @enderror" id="category"
                                     name="category_id" required>
@@ -41,6 +36,16 @@
                                         {{ $message }}
                                     </div>
                                 @enderror
+                            </div> --}}
+
+                            <div class="form-group">
+                                <label for="category_id">Category</label>
+                                <select class="form-control" id="category_id" name="category_id" required>
+                                    <option value="">Select Category</option>
+                                    @foreach ($categories as $category)
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    @endforeach
+                                </select>
                             </div>
 
                             <!-- Slug Field -->
@@ -54,6 +59,7 @@
                                     </div>
                                 @enderror
                             </div>
+
 
                             <!-- Content Field -->
                             <div class="form-group">
@@ -91,4 +97,19 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const titleInput = document.getElementById('title');
+            const slugInput = document.getElementById('slug');
+
+            titleInput.addEventListener('input', function() {
+                let slug = titleInput.value.toLowerCase()
+                    .replace(/[^a-z0-9\s-]/g, '')
+                    .replace(/\s+/g, '-')
+                    .replace(/-+/g, '-');
+                slugInput.value = slug;
+            });
+        });
+    </script>
 @endsection
