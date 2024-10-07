@@ -16,6 +16,7 @@ return new class extends Migration {
             $table->string('title');
             $table->enum('status', ['Submit', 'Aktif', 'Batal']);
             $table->enum('collaboration_type', ['Dalam_Negeri', 'Luar_Negeri']);
+            $table->string('funder');
             $table->string('schema');
             $table->text('team');
             $table->integer('fund_amount');

@@ -32,11 +32,15 @@ class PartnershipController extends Controller
     public function store(Request $request)
     {
 
+        $request->merge([
+            'fund_amount' => str_replace('.', '', $request->fund_amount),
+        ]);
 
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'status' => 'required|in:Submit,Aktif,Batal',
-            'collaboration_type' => 'required|in: Dalam_Negeri, Luar_Negeri',
+            'collaboration_type' => 'required|in:Dalam_Negeri,Luar_Negeri',
+            'funder' => 'required|string',
             'schema' => 'required|string',
             'team' => 'required|string',
             'fund_amount' => 'required|integer',
@@ -49,7 +53,6 @@ class PartnershipController extends Controller
 
         // dd($validated);
         Partnership::create($validated);
-
         return redirect()->route('partnerships.index')->with('success', 'Partnership created successfully!');
     }
 
@@ -66,7 +69,8 @@ class PartnershipController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $partnership = Partnership::findOrFail($id);
+        return view('admin.partnerships.edit', compact('partnership'));
     }
 
     /**
@@ -74,7 +78,26 @@ class PartnershipController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->merge([
+            'fund_amount' => str_replace('.', '', $request->fund_amount),
+        ]);
+
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'status' => 'required|in:Submit,Aktif,Batal',
+            'collaboration_type' => 'required|in:Dalam_Negeri,Luar_Negeri',
+            'funder' => 'required|string',
+            'schema' => 'required|string',
+            'team' => 'required|string',
+            'fund_amount' => 'required|integer',
+            'fund_currency' => 'required|string',
+            'start_date' => 'nullable|date',
+            'end_date' => 'nullable|date',
+        ]);
+
+        $partnership = Partnership::findOrFail($id);
+        $partnership->update($validated);
+        return redirect()->route('partnerships.index')->with('success', 'Partnership updated successfully!');
     }
 
     /**
@@ -82,6 +105,8 @@ class PartnershipController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Partnership::destroy($id);
+        return redirect()->route('partnerships.index')->with('success', 'Kategori berhasil dihapus
+        !');
     }
 }

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Partnership extends Model
 {
@@ -13,6 +14,7 @@ class Partnership extends Model
         'title',
         'status',
         'collaboration_type',
+        'funder',
         'schema',
         'team',
         'fund_amount',
@@ -26,4 +28,10 @@ class Partnership extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    // Tambahkan casting untuk kolom tanggal
+    protected $casts = [
+        'start_date' => 'datetime:Y-m-d',
+        'end_date' => 'datetime:Y-m-d',
+    ];
 }
