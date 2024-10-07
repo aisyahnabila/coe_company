@@ -66,9 +66,9 @@
 
                             <!-- Fund Amount Field -->
                             <div class="form-group">
-                                <label for="fund_amoung">Fund Amount</label>
-                                <input type="number" class="form-control" id="fund_amoung" name="fund_amoung"
-                                    value="{{ old('fund_amoung') }}" required>
+                                <label for="fund_amount">Fund Amount</label>
+                                <input type="number" class="form-control" id="fund_amount" name="fund_amount"
+                                    value="{{ old('fund_amount') }}" required>
                             </div>
 
                             <!-- Fund Currency Field -->
