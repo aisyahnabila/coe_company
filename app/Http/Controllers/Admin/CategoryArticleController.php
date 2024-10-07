@@ -31,7 +31,7 @@ class CategoryArticleController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|max:255|unique:category_article,name',
+            'category_name' => 'required|string|max:255|unique:category_article,category_name',
         ]);
 
         CategoryArticle::create($request->all());
@@ -52,8 +52,8 @@ class CategoryArticleController extends Controller
      */
     public function edit(string $id)
     {
-        $category = CategoryArticle::find($id);
-        return view('categories.edit', compact('category'));
+        $category = CategoryArticle::findOrFail($id);
+        return view('admin.categories.edit', compact('category'));
     }
 
     /**
@@ -61,12 +61,12 @@ class CategoryArticleController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $request->validate([
-            'name' => 'required|string|max:255|unique:category_article,name,' . $id,
+        $validated = $request->validate([
+            'category_name' => 'required|string|max:255',
         ]);
 
-        $category = CategoryArticle::find($id);
-        $category->update($request->all());
+        $category = CategoryArticle::findOrFail($id);
+        $category->update($validated);
 
         return redirect()->route('categories.index')->with('success', 'Kategori berhasil diperbarui!');
     }

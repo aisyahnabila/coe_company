@@ -24,12 +24,12 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
 
     Route::resource('articles', ArticleController::class);
-    Route::get('/articles', [ArticleController::class, 'index'])->name('articles.index');
+    // Route::get('/articles', [ArticleController::class, 'index'])->name('articles.index');
 
     Route::resource('categories', CategoryArticleController::class);
-    Route::get('/categories', [CategoryArticleController::class, 'index'])->name('categories.index');
+    // Route::get('/categories', [CategoryArticleController::class, 'index'])->name('categories.index');
 
     Route::resource('partnerships', PartnershipController::class);
-    Route::get('/partnerships', [PartnershipController::class, 'index'])->name('partnerships.index');
+    // Route::get('/partnerships', [PartnershipController::class, 'index'])->name('partnerships.index');
 });
 

@@ -11,7 +11,7 @@ class CategoryArticle extends Model
 
     protected $table = 'category_article';
 
-    protected $fillable = ['name'];
+    protected $fillable = ['category_name'];
 
     // Relasi ke artikel
     public function articles()
