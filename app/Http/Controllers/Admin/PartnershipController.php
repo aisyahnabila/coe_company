@@ -106,7 +106,7 @@ class PartnershipController extends Controller
     public function destroy(string $id)
     {
         Partnership::destroy($id);
-        return redirect()->route('partnerships.index')->with('success', 'Kategori berhasil dihapus
+        return redirect()->route('partnerships.index')->with('success', 'Parnership delete successfully
         !');
     }
 }
