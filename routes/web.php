@@ -30,5 +30,6 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/categories', [CategoryArticleController::class, 'index'])->name('categories.index');
 
     Route::resource('partnerships', PartnershipController::class);
+    Route::get('/partnerships', [PartnershipController::class, 'index'])->name('partnerships.index');
 });
 

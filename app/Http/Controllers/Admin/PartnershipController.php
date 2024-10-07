@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Partnership;
+use Auth;
 use Illuminate\Http\Request;
 
 class PartnershipController extends Controller
@@ -22,7 +23,7 @@ class PartnershipController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.partnerships.create');
     }
 
     /**
@@ -30,16 +31,26 @@ class PartnershipController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
+
+
+        $validated = $request->validate([
             'title' => 'required|string|max:255',
-            'status' => 'required',
-            'collaboration_type' => 'required|string',
-            'funder' => 'required|string',
+            'status' => 'required|in:Submit,Aktif,Batal',
+            'collaboration_type' => 'required|in: Dalam_Negeri, Luar_Negeri',
+            'schema' => 'required|string',
+            'team' => 'required|string',
+            'fund_amount' => 'required|integer',
+            'fund_currency' => 'required|string',
+            'start_date' => 'nullable|date',
+            'end_date' => 'nullable|date',
         ]);
 
-        Partnership::create($validatedData);
-        return redirect()->route('admin.partnerships.index')->with('success', 'Partnership created successfully!');
+        $validated['user_id'] = Auth::id();
 
+        // dd($validated);
+        Partnership::create($validated);
+
+        return redirect()->route('partnerships.index')->with('success', 'Partnership created successfully!');
     }
 
     /**
