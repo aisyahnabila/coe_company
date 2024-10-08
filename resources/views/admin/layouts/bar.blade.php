@@ -26,7 +26,7 @@
                             <span class="avatar avatar-online">
                                 <img src="{{ asset('assets/img/Logo BHT.png') }}" alt="avatar">
                             </span>
-                            <span class="user-name">John Doe</span>
+                            <span class="user-name">{{ Auth::user()->name }}</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
                             {{-- <a class="dropdown-item" href="{{ route('profile.edit') }}"><i class="ft-user"></i> Edit
@@ -56,6 +56,10 @@
                 <a href="{{ route('dashboard') }}"><i class="icon-home"></i><span
                         class="menu-title">Dashboard</span></a>
             </li>
+            <li class="nav-item">
+                <a href="{{ route('dashboard') }}"><i class="icon-wrench"></i><span
+                        class="menu-title">Custom Page</span></a>
+            </li>
             <li class="navigation-header"><span>CONTENT</span><i class="ft-more-horizontal ft-minus"
                     data-toggle="tooltip" data-placement="right" data-original-title="Layouts"></i></li>
 
@@ -71,6 +75,20 @@
                 <a href="#"><i class="icon-layers"></i><span class="menu-title">Kerja Sama</span></a>
                 <ul class="menu-content">
                     <li><a class="menu-item" href="{{ route('partnerships.index') }}">Daftar</a></li>
+                    {{-- <li><a class="menu-item" href="{{ route('partnerships.create') }}">Tambahkan</a></li> --}}
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#"><i class="icon-layers"></i><span class="menu-title">Mitra</span></a>
+                <ul class="menu-content">
+                    <li><a class="menu-item" href="{{ route('mitra.index') }}">Daftar Mitra</a></li>
+                    {{-- <li><a class="menu-item" href="{{ route('partnerships.create') }}">Tambahkan</a></li> --}}
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#"><i class="icon-layers"></i><span class="menu-title">Pegawai</span></a>
+                <ul class="menu-content">
+                    <li><a class="menu-item" href="{{ route('staff.index') }}">Daftar Pegawai</a></li>
                     {{-- <li><a class="menu-item" href="{{ route('partnerships.create') }}">Tambahkan</a></li> --}}
                 </ul>
             </li>

@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\Article;
-use App\Models\CategoryArticle;
-use Auth;
 use Illuminate\Http\Request;
-use Storage;
+use App\Models\CategoryArticle;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
+
 
 class ArticleController extends Controller
 {
