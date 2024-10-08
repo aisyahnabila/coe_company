@@ -43,11 +43,10 @@
                                 <select class="form-control" id="category_id" name="category_id" required>
                                     <option value="">Select Category</option>
                                     @foreach ($categories as $category)
-                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                        <option value="{{ $category->id }}">{{ $category->category_name }}</option>
                                     @endforeach
                                 </select>
                             </div>
-
                             <!-- Slug Field -->
                             <div class="form-group">
                                 <label for="slug">Slug</label>

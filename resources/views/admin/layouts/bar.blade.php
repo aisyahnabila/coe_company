@@ -57,7 +57,7 @@
                         class="menu-title">Dashboard</span></a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('dashboard') }}"><i class="icon-wrench"></i><span
+                <a href="{{ route('page.index') }}"><i class="icon-wrench"></i><span
                         class="menu-title">Custom Page</span></a>
             </li>
             <li class="navigation-header"><span>CONTENT</span><i class="ft-more-horizontal ft-minus"

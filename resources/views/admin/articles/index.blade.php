@@ -27,7 +27,7 @@
                             @foreach ($articles as $article)
                                 <tr>
                                     <td>{{ $article->title }}</td>
-                                    <td>{{ $article->category->name }}</td>
+                                    <td>{{ $article->category->category_name }}</td>
                                     <td>{{ $article->created_at->format('d M Y') }}</td>
                                     <td>
                                         <!-- Tombol Edit -->
