@@ -42,6 +42,7 @@ class ArticleController extends Controller
             'content' => 'required',
             'slug' => 'required|unique:articles',
             'featured_img' => 'required|image',
+            'registration_link' => 'nullable|url',
             'category_id' => 'required|exists:category_article,id',
         ]);
 
@@ -87,6 +88,7 @@ class ArticleController extends Controller
             'content' => 'required',
             'slug' => 'required|unique:articles,slug,' . $id,
             'featured_img' => 'nullable|image',
+            'registration_link' => 'nullable|url',
             'category_id' => 'required|exists:category_article,id',
         ]);
 

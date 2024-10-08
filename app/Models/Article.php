@@ -13,6 +13,7 @@ class Article extends Model
         'content',
         'slug',
         'featured_img',
+        'registration_link',
         'user_id',
         'category_id',
     ];

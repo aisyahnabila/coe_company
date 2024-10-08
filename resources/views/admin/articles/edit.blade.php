@@ -29,7 +29,8 @@
                                     @foreach ($categories as $category)
                                         <option value="{{ $category->id }}"
                                             {{ $category->id == $article->category_id ? 'selected' : '' }}>
-                                            {{ $category->name }}</option>
+                                            {{ $category->category_name }}
+                                        </option>
                                     @endforeach
                                 </select>
                             </div>
@@ -52,6 +53,13 @@
                                 <label for="featured_img">Featured Image</label>
                                 <input type="file" class="form-control-file" id="featured_img" name="featured_img">
                                 <small>Current image: {{ $article->featured_img }}</small>
+                            </div>
+
+                            {{-- Link Registration Field --}}
+                            <div class="form-group">
+                                <label for="registration_link">Link Pendaftaran</label>
+                                <input type="url" class="form-control" id="registration_link" name="registration_link"
+                                    value="{{ old('registration_link', $article->registration_link ?? '') }}">
                             </div>
 
                             <!-- Submit Button -->
