@@ -27,18 +27,7 @@
                     </div>
                     <div class="col-md-8">
                         <p class="text-intro">
-                            <b>Center of Excellence (CoE) Biomedical & Healthcare Technology</b> ini akan fokus pada riset
-                            dan
-                            inovasi di bidang rekayasa biomedis dan teknologi layanan kesehatan, dengan menekankan pada
-                            aspek
-                            socio-economic dan psychological wellbeing pasien atau masyarakat. Riset dasar dan terapan,
-                            serta
-                            inovasi di bidang tersebut akan dilakukan secara kolaboratif dengan berbagai stakeholder di
-                            bidang
-                            Kesehatan seperti dengan Fakultas Kedokteran & Kesehatan Universitas DN/LN (Academic); Industri
-                            ALKES, Rumah sakit, Klinik dll (Business); Kemenkes, Pemda, dll (Government); dan Asosiasi
-                            Profesi
-                            Kedokteran & Kesehatan (Society).
+                            {!! $about->about !!}
                         </p>
                     </div>
                 </div>
@@ -79,108 +68,46 @@
                     </div>
                 </div>
             </div>
-
             {{-- ================ SEMINAR============== --}}
             <div id="training">
                 <h3 class="fw-bold text-blue-dark text-center mb-5">PELATIHAN SEMINAR</h3>
                 <div class="swiper mySwiper">
+
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="card border-0">
-                                <img src="{{ asset('assets/img/4 1.png') }}" class="card-img-top" alt="Slide Image">
-                                <div class="card-body">
-                                    <div class="text-start">
-                                        <h5 class="card-title fw-bold">Card Title</h5>
-                                        <p class="card-text seminar-text">This is a brief description of the content in the
-                                            card. It
-                                            provides some interesting information.</p>
-                                    </div>
+                        @foreach ($seminars as $seminar)
+                            <div class="swiper-slide">
+                                <div class="card border-0">
+                                    <img src="{{ asset('storage/' . $seminar->featured_img) }}" class="card-img-top "
+                                        style="width: 100%;height:400px; object-fit: cover;" alt="Slide Image">
+                                    <div class="card-body">
 
-                                    <a href="#" class="btn btn-dark-blue w-100 mt-5 rounded-3">LINK REGISTRASI</a>
-                                    <div class="row text-secondary mt-3">
-                                        <div class="col-6 d-flex align-items-center"> <!-- Use col-6 for all sizes -->
-                                            <img class="rounded-circle me-2" src="{{ asset('assets/img/Logo BHT.png') }}"
-                                                style="width: 30px;" alt="">
-                                            <p class="mb-0 text">Denny Daffa asd</p>
+                                        <div class="text-start">
+                                            <h5 class="card-title fw-bold">{{ $seminar->title }}</h5>
+                                            <p class="card-text seminar-text">{{ Str::limit($seminar->content, 20, '...') }}
+                                            </p>
                                         </div>
 
-                                        <div class="col-6 d-flex align-items-center justify-content-start">
-                                            <!-- Ensure flex alignment -->
-                                            <i class="bi bi-clock me-2"></i>
-                                            <p class="mb-0 text">20 Mei. 2024</p>
-                                        </div>
-                                    </div>
+                                        <a href="#" class="btn btn-dark-blue w-100 mt-5 rounded-3">LINK REGISTRASI</a>
+                                        <div class="row text-secondary mt-3">
+                                            <div class="col-6 d-flex align-items-center"> <!-- Use col-6 for all sizes -->
+                                                <img class="rounded-circle me-2"
+                                                    src="{{ asset('assets/img/Logo BHT.png') }}" style="width: 30px;"
+                                                    alt="">
+                                                <p class="mb-0 text">{{ $seminar->user->name }}</p>
+                                            </div>
 
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card border-0">
-                                <img src="{{ asset('assets/img/4 1.png') }}" class="card-img-top" alt="Slide Image">
-                                <div class="card-body">
-                                    <div class="text-start">
-                                        <h5 class="card-title fw-bold">Card Title</h5>
-                                        <p class="card-text seminar-text">This is a brief description of the content in the
-                                            card. It
-                                            provides some interesting information.</p>
-                                    </div>
-
-                                    <a href="#" class="btn btn-dark-blue w-100 mt-5 rounded-3">LINK REGISTRASI</a>
-                                    <div class="row text-secondary mt-3">
-                                        <div class="col-6 d-flex align-items-center"> <!-- Use col-6 for all sizes -->
-                                            <img class="rounded-circle me-2" src="{{ asset('assets/img/Logo BHT.png') }}"
-                                                style="width: 30px;" alt="">
-                                            <p class="mb-0 text">Denny Daffa asd</p>
+                                            <div class="col-6 d-flex align-items-center justify-content-start">
+                                                <!-- Ensure flex alignment -->
+                                                <i class="bi bi-clock me-2"></i>
+                                                <p class="mb-0 text">{{ $seminar->created_at->format('d M Y') }}</p>
+                                            </div>
                                         </div>
 
-                                        <div class="col-6 d-flex align-items-center justify-content-start">
-                                            <!-- Ensure flex alignment -->
-                                            <i class="bi bi-clock me-2"></i>
-                                            <p class="mb-0 text">20 Mei. 2024</p>
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card border-0">
-                                <img src="{{ asset('assets/img/4 1.png') }}" class="card-img-top" alt="Slide Image">
-                                <div class="card-body">
-                                    <div class="text-start">
-                                        <h5 class="card-title fw-bold">Card Title</h5>
-                                        <p class="card-text seminar-text">This is a brief description of the content in the
-                                            card. It
-                                            provides some interesting information.</p>
-                                    </div>
-
-                                    <a href="#" class="btn btn-dark-blue w-100 mt-5 rounded-3">LINK REGISTRASI</a>
-                                    <div class="row text-secondary mt-3">
-                                        <div class="col-6 d-flex align-items-center"> <!-- Use col-6 for all sizes -->
-                                            <img class="rounded-circle me-2" src="{{ asset('assets/img/Logo BHT.png') }}"
-                                                style="width: 30px;" alt="">
-                                            <p class="mb-0 text">Denny Daffa asd</p>
-                                        </div>
-
-                                        <div class="col-6 d-flex align-items-center justify-content-start">
-                                            <!-- Ensure flex alignment -->
-                                            <i class="bi bi-clock me-2"></i>
-                                            <p class="mb-0 text">20 Mei. 2024</p>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="swiper-slide">Slide 4</div>
-                        <div class="swiper-slide">Slide 5</div>
-                        <div class="swiper-slide">Slide 6</div>
-                        <div class="swiper-slide">Slide 7</div>
-                        <div class="swiper-slide">Slide 8</div>
-                        <div class="swiper-slide">Slide 9</div>
+                        @endforeach
                     </div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
@@ -195,225 +122,68 @@
                 <h3 class="text-white py-3 fw-bold text-center">KERJA SAMA</h3>
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide rounded-4">
-                            <div class="card card-kerja-sama border-0">
-                                <div class="card-body">
-                                    <div class="text-start mb-3">
-                                        <span class="badge text-bg-primary text-start">Status Aktif</span>
-                                    </div>
-                                    <div class="text-center">
-                                        <h5 class="card-title fw-bold">Tide Eye – AI/IoT-powered Airborne System for
-                                            Monitoring Water Level and Tidal Floods in North Coast of Central Java</h5>
-                                    </div>
-
-                                    <hr class="border border-primary border-3 opacity-75">
-                                    <div class="custom-table-container">
-                                        <table class="custom-table">
-                                            <tr>
-                                                <td class="text-start">Funder</td>
-                                                <td>: KONEKSI-DFAT</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-start">Skema</td>
-                                                <td>: Kolaboratif Riset Indonesia-Australia</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-start">Fund</td>
-                                                <td>: $350,000</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-start">Teams</td>
-                                                <td>: Zoro, Pedrosa, Firsabersari, The Cangcuters</td>
-                                            </tr>
-
-                                        </table>
-
-                                    </div>
-
-                                    <span class="badge text-bg-dark-blue text-center w-100 mt-4">Kolaborasi Luar Negeri
-                                        (LN)</span>
-                                </div>
-                                <div class="card-footer text-body-secondary">
-                                    <div class="row text-secondary mt-3">
-                                        <div class="col-6 d-flex align-items-center"> <!-- Use col-6 for all sizes -->
-                                            <img class="rounded-circle me-2" src="{{ asset('assets/img/Logo BHT.png') }}"
-                                                style="width: 30px;" alt="">
-                                            <p class="mb-0 text">Denny Daffa asd</p>
+                        @foreach ($kerjasamas as $kerjasama)
+                            <div class="swiper-slide rounded-4">
+                                <div class="card card-kerja-sama border-0 h-100"> <!-- Added h-100 for full height -->
+                                    <div class="card-body d-flex flex-column"> <!-- Added d-flex and flex-column -->
+                                        <div class="text-start mb-3">
+                                            @if ($kerjasama->status == 'Submit')
+                                                <span class="badge text-bg-success text-start">Status Submit</span>
+                                            @elseif ($kerjasama->status == 'Aktif')
+                                                <span class="badge text-bg-primary text-start">Status Aktif</span>
+                                            @elseif ($kerjasama->status == 'Batal')
+                                                <span class="badge text-bg-danger text-start">Status Batal</span>
+                                            @endif
+                                        </div>
+                                        <div class="text-center">
+                                            <h5 class="card-title fw-bold">{{ $kerjasama->title }}</h5>
                                         </div>
 
-                                        <div class="col-6 d-flex align-items-center justify-content-start">
-                                            <!-- Ensure flex alignment -->
-                                            <i class="bi bi-clock me-2"></i>
-                                            <p class="mb-0 text">20 Mei. 2024</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide rounded-4">
-                            <div class="card card-kerja-sama border-0">
-                                <div class="card-body">
-                                    <div class="text-start mb-3">
-                                        <span class="badge text-bg-primary text-start">Status Aktif</span>
-                                    </div>
-                                    <div class="text-center">
-                                        <h5 class="card-title fw-bold">Tide Eye – AI/IoT-powered Airborne System for
-                                            Monitoring Water Level and Tidal Floods in North Coast of Central Java</h5>
-                                    </div>
+                                        <hr class="border border-primary border-3 opacity-75">
 
-                                    <hr class="border border-primary border-3 opacity-75">
-                                    <div class="custom-table-container">
-                                        <table class="custom-table">
-                                            <tr>
-                                                <td class="text-start">Funder</td>
-                                                <td>: KONEKSI-DFAT</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-start">Skema</td>
-                                                <td>: Kolaboratif Riset Indonesia-Australia</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-start">Fund</td>
-                                                <td>: $350,000</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-start">Teams</td>
-                                                <td>: Zoro, Pedrosa, Firsabersari, The Cangcuters</td>
-                                            </tr>
-
-                                        </table>
-
-                                    </div>
-
-                                    <span class="badge text-bg-dark-blue text-center w-100 mt-4">Kolaborasi Luar Negeri
-                                        (LN)</span>
-                                </div>
-                                <div class="card-footer text-body-secondary">
-                                    <div class="row text-secondary mt-3">
-                                        <div class="col-6 d-flex align-items-center"> <!-- Use col-6 for all sizes -->
-                                            <img class="rounded-circle me-2" src="{{ asset('assets/img/Logo BHT.png') }}"
-                                                style="width: 30px;" alt="">
-                                            <p class="mb-0 text">Denny Daffa asd</p>
+                                        <div class="custom-table-container flex-grow-1">
+                                            <!-- Use flex-grow-1 to take available space -->
+                                            <table class="custom-table">
+                                                <tr>
+                                                    <td class="text-start">Funder</td>
+                                                    <td>: {{ $kerjasama->funder }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-start">Skema</td>
+                                                    <td>: {{ $kerjasama->schema }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-start">Fund</td>
+                                                    <td>: {{ $kerjasama->fund_currency }} {{ $kerjasama->fund_amount }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-start">Teams</td>
+                                                    <td>: {{ $kerjasama->team }}</td>
+                                                </tr>
+                                            </table>
                                         </div>
 
-                                        <div class="col-6 d-flex align-items-center justify-content-start">
-                                            <!-- Ensure flex alignment -->
-                                            <i class="bi bi-clock me-2"></i>
-                                            <p class="mb-0 text">20 Mei. 2024</p>
+                                        <span
+                                            class="badge text-bg-dark-blue text-center w-100 mt-4">{{ $kerjasama->collaboration_type }}</span>
+                                    </div>
+                                    <div class="card-footer text-body-secondary">
+                                        <div class="row text-secondary mt-3">
+                                            <div class="col-6 d-flex align-items-center"> <!-- Use col-6 for all sizes -->
+                                                <img class="rounded-circle me-2"
+                                                    src="{{ asset('assets/img/Logo BHT.png') }}" style="width: 30px;"
+                                                    alt="">
+                                                <p class="mb-0 text">{{ $kerjasama->user->name }}</p>
+                                            </div>
+                                            <div class="col-6 d-flex align-items-center justify-content-start">
+                                                <i class="bi bi-clock me-2"></i>
+                                                <p class="mb-0 text">{{ $kerjasama->end_date->format('d M Y') }}</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="swiper-slide rounded-4">
-                            <div class="card card-kerja-sama border-0">
-                                <div class="card-body">
-                                    <div class="text-start mb-3">
-                                        <span class="badge text-bg-primary text-start">Status Aktif</span>
-                                    </div>
-                                    <div class="text-center">
-                                        <h5 class="card-title fw-bold">Tide Eye – AI/IoT-powered Airborne System for
-                                            Monitoring Water Level and Tidal Floods in North Coast of Central Java</h5>
-                                    </div>
-
-                                    <hr class="border border-primary border-3 opacity-75">
-                                    <div class="custom-table-container">
-                                        <table class="custom-table">
-                                            <tr>
-                                                <td class="text-start">Funder</td>
-                                                <td>: KONEKSI-DFAT</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-start">Skema</td>
-                                                <td>: Kolaboratif Riset Indonesia-Australia</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-start">Fund</td>
-                                                <td>: $350,000</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-start">Teams</td>
-                                                <td>: Zoro, Pedrosa, Firsabersari, The Cangcuters</td>
-                                            </tr>
-
-                                        </table>
-
-                                    </div>
-                                    <span class="badge text-bg-dark-blue text-center w-100 mt-4">Kolaborasi Luar Negeri
-                                        (LN)</span>
-                                </div>
-                                <div class="card-footer text-body-secondary">
-                                    <div class="row text-secondary mt-3">
-                                        <div class="col-6 d-flex align-items-center"> <!-- Use col-6 for all sizes -->
-                                            <img class="rounded-circle me-2" src="{{ asset('assets/img/Logo BHT.png') }}"
-                                                style="width: 30px;" alt="">
-                                            <p class="mb-0 text">Denny Daffa asd</p>
-                                        </div>
-
-                                        <div class="col-6 d-flex align-items-center justify-content-start">
-                                            <!-- Ensure flex alignment -->
-                                            <i class="bi bi-clock me-2"></i>
-                                            <p class="mb-0 text">20 Mei. 2024</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide rounded-4">
-                            <div class="card card-kerja-sama border-0">
-                                <div class="card-body">
-                                    <div class="text-start mb-3">
-                                        <span class="badge text-bg-primary text-start">Status Aktif</span>
-                                    </div>
-                                    <div class="text-center">
-                                        <h5 class="card-title fw-bold">Tide Eye – AI/IoT-powered Airborne System for
-                                            Monitoring Water Level and Tidal Floods in North Coast of Central Java</h5>
-                                    </div>
-
-                                    <hr class="border border-primary border-3 opacity-75">
-                                    <div class="custom-table-container">
-                                        <table class="custom-table">
-                                            <tr>
-                                                <td class="text-start">Funder</td>
-                                                <td>: KONEKSI-DFAT</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-start">Skema</td>
-                                                <td>: Kolaboratif Riset Indonesia-Australia</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-start">Fund</td>
-                                                <td>: $350,000</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-start">Teams</td>
-                                                <td>: Zoro, Pedrosa, Firsabersari, The Cangcuters</td>
-                                            </tr>
-
-                                        </table>
-
-                                    </div>
-
-                                    <span class="badge text-bg-dark-blue text-center w-100 mt-4">Kolaborasi Luar Negeri
-                                        (LN)</span>
-                                </div>
-                                <div class="card-footer text-body-secondary">
-                                    <div class="row text-secondary mt-3">
-                                        <div class="col-6 d-flex align-items-center"> <!-- Use col-6 for all sizes -->
-                                            <img class="rounded-circle me-2" src="{{ asset('assets/img/Logo BHT.png') }}"
-                                                style="width: 30px;" alt="">
-                                            <p class="mb-0 text">Denny Daffa asd</p>
-                                        </div>
-
-                                        <div class="col-6 d-flex align-items-center justify-content-start">
-                                            <!-- Ensure flex alignment -->
-                                            <i class="bi bi-clock me-2"></i>
-                                            <p class="mb-0 text">20 Mei. 2024</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
@@ -429,102 +199,42 @@
                 <h3 class="fw-bold text-blue-dark text-center mb-5">PENGABDIAN MASYARAKAT</h3>
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="card border-0">
-                                <img src="{{ asset('assets/img/4 1.png') }}" class="card-img-top" alt="Slide Image">
-                                <div class="card-body">
-                                    <div class="text-start">
-                                        <h5 class="card-title fw-bold">Card Title</h5>
-                                        <p class="card-text seminar-text">This is a brief description of the content in the
-                                            card. It
-                                            provides some interesting information.</p>
-                                    </div>
+                        @foreach ($pengmass as $pengmas)
+                            <div class="swiper-slide">
+                                <div class="card border-0">
+                                    <img src="{{ asset('storage/' . $pengmas->featured_img) }}" class="card-img-top "
+                                        style="width: 100%;height:400px; object-fit: cover;" alt="Slide Image">
+                                    <div class="card-body">
 
-                                    <a href="#" class="btn btn-dark-blue w-100 mt-5 rounded-3">LINK REGISTRASI</a>
-                                    <div class="row text-secondary mt-3">
-                                        <div class="col-6 d-flex align-items-center"> <!-- Use col-6 for all sizes -->
-                                            <img class="rounded-circle me-2" src="{{ asset('assets/img/Logo BHT.png') }}"
-                                                style="width: 30px;" alt="">
-                                            <p class="mb-0 text">Denny Daffa asd</p>
+                                        <div class="text-start">
+                                            <h5 class="card-title fw-bold">{{ $pengmas->title }}</h5>
+                                            <p class="card-text seminar-text">
+                                                {{ Str::limit($pengmas->content, 20, '...') }}
+                                            </p>
                                         </div>
 
-                                        <div class="col-6 d-flex align-items-center justify-content-start">
-                                            <!-- Ensure flex alignment -->
-                                            <i class="bi bi-clock me-2"></i>
-                                            <p class="mb-0 text">20 Mei. 2024</p>
-                                        </div>
-                                    </div>
+                                        <a href="#" class="btn btn-dark-blue w-100 mt-5 rounded-3">LINK
+                                            REGISTRASI</a>
+                                        <div class="row text-secondary mt-3">
+                                            <div class="col-6 d-flex align-items-center"> <!-- Use col-6 for all sizes -->
+                                                <img class="rounded-circle me-2"
+                                                    src="{{ asset('assets/img/Logo BHT.png') }}" style="width: 30px;"
+                                                    alt="">
+                                                <p class="mb-0 text">{{ $pengmas->user->name }}</p>
+                                            </div>
 
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card border-0">
-                                <img src="{{ asset('assets/img/4 1.png') }}" class="card-img-top" alt="Slide Image">
-                                <div class="card-body">
-                                    <div class="text-start">
-                                        <h5 class="card-title fw-bold">Card Title</h5>
-                                        <p class="card-text seminar-text">This is a brief description of the content in the
-                                            card. It
-                                            provides some interesting information.</p>
-                                    </div>
-
-                                    <a href="#" class="btn btn-dark-blue w-100 mt-5 rounded-3">LINK REGISTRASI</a>
-                                    <div class="row text-secondary mt-3">
-                                        <div class="col-6 d-flex align-items-center"> <!-- Use col-6 for all sizes -->
-                                            <img class="rounded-circle me-2" src="{{ asset('assets/img/Logo BHT.png') }}"
-                                                style="width: 30px;" alt="">
-                                            <p class="mb-0 text">Denny Daffa asd</p>
+                                            <div class="col-6 d-flex align-items-center justify-content-start">
+                                                <!-- Ensure flex alignment -->
+                                                <i class="bi bi-clock me-2"></i>
+                                                <p class="mb-0 text">{{ $pengmas->created_at->format('d M Y') }}</p>
+                                            </div>
                                         </div>
 
-                                        <div class="col-6 d-flex align-items-center justify-content-start">
-                                            <!-- Ensure flex alignment -->
-                                            <i class="bi bi-clock me-2"></i>
-                                            <p class="mb-0 text">20 Mei. 2024</p>
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card border-0">
-                                <img src="{{ asset('assets/img/4 1.png') }}" class="card-img-top" alt="Slide Image">
-                                <div class="card-body">
-                                    <div class="text-start">
-                                        <h5 class="card-title fw-bold">Card Title</h5>
-                                        <p class="card-text seminar-text">This is a brief description of the content in the
-                                            card. It
-                                            provides some interesting information.</p>
-                                    </div>
-
-                                    <a href="#" class="btn btn-dark-blue w-100 mt-5 rounded-3">LINK REGISTRASI</a>
-                                    <div class="row text-secondary mt-3">
-                                        <div class="col-6 d-flex align-items-center"> <!-- Use col-6 for all sizes -->
-                                            <img class="rounded-circle me-2" src="{{ asset('assets/img/Logo BHT.png') }}"
-                                                style="width: 30px;" alt="">
-                                            <p class="mb-0 text">Denny Daffa asd</p>
-                                        </div>
-
-                                        <div class="col-6 d-flex align-items-center justify-content-start">
-                                            <!-- Ensure flex alignment -->
-                                            <i class="bi bi-clock me-2"></i>
-                                            <p class="mb-0 text">20 Mei. 2024</p>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="swiper-slide">Slide 4</div>
-                        <div class="swiper-slide">Slide 5</div>
-                        <div class="swiper-slide">Slide 6</div>
-                        <div class="swiper-slide">Slide 7</div>
-                        <div class="swiper-slide">Slide 8</div>
-                        <div class="swiper-slide">Slide 9</div>
+                        @endforeach
                     </div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
@@ -537,37 +247,14 @@
             <div class="py-3">
                 <h3 class="fw-bold text-blue-dark text-center py-3 ">MITRA</h3>
                 <div class="swiper mitraSwiper">
-                    <div class="swiper-wrapper">
+                    <div class="swiper-wrapper d-flex align-items-center">
                         <!-- Swiper slide with images -->
+                        @foreach ($mitras as $mitra)
                         <div class="swiper-slide">
-                            <img src="{{ asset('assets/img/mitra/ipgeri.png') }}" class="mitraImg" alt="Mitra 1"
+                            <img src=" {{ asset('storage/' . $mitra->logo_img) }}" class="mitraImg" alt="{{$mitra->partner_name}}"
                                 style="width: 100%; height: auto;">
                         </div>
-                        <div class="swiper-slide">
-                            <img src="{{ asset('assets/img/mitra/up.png') }}" class="mitraImg" alt="Mitra 1"
-                                style="width: 100%; height: auto;">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="{{ asset('assets/img/mitra/ipgeri.png') }}" class="mitraImg" alt="Mitra 1"
-                                style="width: 100%; height: auto;">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="{{ asset('assets/img/mitra/ipgeri.png') }}" class="mitraImg" alt="Mitra 1"
-                                style="width: 100%; height: auto;">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="{{ asset('assets/img/mitra/ipgeri.png') }}" class="mitraImg" alt="Mitra 1"
-                                style="width: 100%; height: auto;">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="{{ asset('assets/img/mitra/ipgeri.png') }}" class="mitraImg" alt="Mitra 1"
-                                style="width: 100%; height: auto;">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="{{ asset('assets/img/mitra/ipgeri.png') }}" class="mitraImg" alt="Mitra 1"
-                                style="width: 100%; height: auto;">
-                        </div>
-
+                        @endforeach
                     </div>
                 </div>
             </div>
