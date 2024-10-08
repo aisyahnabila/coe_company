@@ -90,7 +90,7 @@ class PartnershipController extends Controller
             'funder' => 'required|string',
             'schema' => 'required|string',
             'team' => 'required|string',
-            'fund_amount' => 'required|integer',
+            'fund_amount' => 'numeric|min:0',
             'fund_currency' => 'required|string',
             'start_date' => 'nullable|date',
             'end_date' => 'nullable|date',

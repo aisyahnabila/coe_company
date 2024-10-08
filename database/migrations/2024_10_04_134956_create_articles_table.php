@@ -17,6 +17,7 @@ return new class extends Migration {
             $table->string('slug');
             $table->text('content');
             $table->string('featured_img');
+            $table->string('registration_link')->nullable();
             $table->unsignedBigInteger('category_id');
             $table->timestamps();
 

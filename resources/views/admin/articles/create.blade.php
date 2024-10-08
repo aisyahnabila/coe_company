@@ -84,6 +84,13 @@
                                 @enderror
                             </div>
 
+                            <!-- Link Registration Field -->
+                            <div class="form-group">
+                                <label for="registration_link">Link Pendaftaran</label>
+                                <input type="url" class="form-control" id="registration_link" name="registration_link"
+                                    value="{{ old('registration_link', $article->registration_link ?? '') }}">
+                            </div>
+
                             <!-- Submit Button -->
                             <div class="form-group text-right">
                                 <button type="submit" class="btn btn-primary">Create Article</button>
