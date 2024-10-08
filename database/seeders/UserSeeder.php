@@ -20,5 +20,10 @@ class UserSeeder extends Seeder
             'email' => 'admin@admin',
             'password' => Hash::make('admin'), // Ganti dengan password yang diinginkan
         ]);
+        User::create([
+            'name' => 'nabila',
+            'email' => 'nabila@admin',
+            'password' => Hash::make('nabila'), // Ganti dengan password yang diinginkan
+        ]);
     }
 }

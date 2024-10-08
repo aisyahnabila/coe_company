@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\CategoryArticleController;
+use App\Http\Controllers\Admin\MitraController;
 use App\Http\Controllers\Admin\PartnershipController;
+use App\Http\Controllers\Admin\StaffController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -31,5 +33,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
     Route::resource('partnerships', PartnershipController::class);
     // Route::get('/partnerships', [PartnershipController::class, 'index'])->name('partnerships.index');
+    Route::resource('staff', StaffController::class);
+    Route::resource('mitra', MitraController::class);
 });
 
