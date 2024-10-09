@@ -3,7 +3,7 @@
 @section('admin-content')
     <div class="container mt-2">
         <div class="row">
-            <div class="col-md-12 offset">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
                         <h4>Create New Staff</h4>
@@ -15,13 +15,16 @@
                             <!-- Name Field -->
                             <div class="form-group">
                                 <label for="name">Name</label>
-                                <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" required>
+                                <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}" required>
+                                @error('name')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
                             </div>
 
                             <!-- Position Field -->
                             <div class="form-group">
                                 <label for="position_id">Position</label>
-                                <select class="form-control" id="position_id" name="position_id" required>
+                                <select class="form-control @error('position_id') is-invalid @enderror" id="position_id" name="position_id" required>
                                     <option value="">Select Position</option>
                                     @foreach ($positions as $position)
                                         <option value="{{ $position->id }}" {{ old('position_id') == $position->id ? 'selected' : '' }}>
@@ -29,48 +32,69 @@
                                         </option>
                                     @endforeach
                                 </select>
+                                @error('position_id')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
                             </div>
 
                             <!-- Email Field -->
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}" required>
+                                <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }}" required>
+                                @error('email')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
                             </div>
 
                             <!-- Bio Field -->
                             <div class="form-group">
                                 <label for="bio">Bio</label>
-                                <textarea class="form-control" id="bio" name="bio" rows="4" required>{{ old('bio') }}</textarea>
+                                <textarea class="form-control @error('bio') is-invalid @enderror" id="bio" name="bio" rows="4" required>{{ old('bio') }}</textarea>
+                                @error('bio')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
                             </div>
 
                             <!-- Photo Field -->
                             <div class="form-group">
                                 <label for="photo">Photo</label>
-                                <input type="file" class="form-control-file" id="photo" name="photo" required>
+                                <input type="file" class="form-control-file @error('photo') is-invalid @enderror" id="photo" name="photo" required>
+                                @error('photo')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
                             </div>
                             <hr>
+
                             <!-- Education Section -->
                             <h5>Education</h5>
                             <div id="education-fields">
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="degree" placeholder="Degree" name="education[0][degree]" value="{{ old('education.0.degree') }}">
+                                            <input type="text" class="form-control @error('education.0.degree') is-invalid @enderror" placeholder="Degree" name="education[0][degree]" value="{{ old('education.0.degree') }}">
+                                            @error('education.0.degree')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Major" name="education[0][major]" value="{{ old('education.0.major') }}">
+                                            <input type="text" class="form-control @error('education.0.major') is-invalid @enderror" placeholder="Major" name="education[0][major]" value="{{ old('education.0.major') }}">
+                                            @error('education.0.major')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Institution" name="education[0][institution]" value="{{ old('education.0.institution') }}">
+                                            <input type="text" class="form-control @error('education.0.institution') is-invalid @enderror" placeholder="Institution" name="education[0][institution]" value="{{ old('education.0.institution') }}">
+                                            @error('education.0.institution')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                             <button type="button" class="btn btn-secondary mb-2" onclick="addEducationField()">Add More Education</button>
 
                             <!-- Media Section -->
@@ -79,17 +103,22 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Platform" name="media[0][platform]" value="{{ old('media.0.platform') }}">
+                                            <input type="text" class="form-control @error('media.0.platform') is-invalid @enderror" placeholder="Platform" name="media[0][platform]" value="{{ old('media.0.platform') }}">
+                                            @error('media.0.platform')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="url" class="form-control" placeholder="URL" name="media[0][url]" value="{{ old('media.0.url') }}">
+                                            <input type="url" class="form-control @error('media.0.url') is-invalid @enderror" placeholder="URL" name="media[0][url]" value="{{ old('media.0.url') }}">
+                                            @error('media.0.url')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                             <button type="button" class="btn btn-secondary mb-2" onclick="addMediaField()">Add More Media</button>
 
                             <!-- Research Section -->
@@ -98,17 +127,22 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Research Field" name="research[0][research_field]" value="{{ old('research.0.research_field') }}">
+                                            <input type="text" class="form-control @error('research.0.research_field') is-invalid @enderror" placeholder="Research Field" name="research[0][research_field]" value="{{ old('research.0.research_field') }}">
+                                            @error('research.0.research_field')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <textarea class="form-control" placeholder="Description" name="research[0][description]" rows="2">{{ old('research.0.description') }}</textarea>
+                                            <textarea class="form-control @error('research.0.description') is-invalid @enderror" placeholder="Description" name="research[0][description]" rows="2">{{ old('research.0.description') }}</textarea>
+                                            @error('research.0.description')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                             <button type="button" class="btn btn-secondary" onclick="addResearchField()">Add More Research</button>
 
                             <!-- Submit Button -->
