@@ -13,10 +13,7 @@ use Illuminate\Support\Facades\Route;
 
 // route for globar user
 Route::get('/', [LandigPageController::class, 'index'])->name('index');
-Route::get('/staff', function () {
-    return view('employee');
-})->name('staff');
-
+Route::get('/staff', [LandigPageController::class, 'staff'])->name('staff');
 
 // route for CMS
 

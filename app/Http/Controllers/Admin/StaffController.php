@@ -133,6 +133,6 @@ class StaffController extends Controller
     {
         $destroy = Staff::findOrFail($id);
         $destroy->delete();
-        return redirect()->route('articles.index')->with('success', 'Article deleted successfully.');
+        return redirect()->route('staff.index')->with('success', 'Article deleted successfully.');
     }
 }
