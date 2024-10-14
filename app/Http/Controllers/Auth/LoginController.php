@@ -34,22 +34,18 @@ class LoginController extends Controller
                 ->withInput();
         }
 
-        // Cek apakah email ada di database
         $user = \App\Models\User::where('email', $request->email)->first();
 
         if ($user) {
-            // Cek apakah password benar
             if (Auth::attempt($request->only(['email', 'password']), $request->filled('remember'))) {
                 Alert::success('Login Successful', 'Welcome back!');
                 return redirect()->route('dashboard');
             } else {
-                // Jika email benar tetapi password salah
                 return redirect()->back()
                     ->withInput()
                     ->withErrors(['password' => 'The password you entered is incorrect.']);
             }
         } else {
-            // Jika email tidak ditemukan
             return redirect()->back()
                 ->withInput()
                 ->withErrors(['email' => 'The email you entered is not registered.']);
