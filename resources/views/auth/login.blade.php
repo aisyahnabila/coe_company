@@ -38,6 +38,11 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/template/assets/css/style.css') }}">
 
     <!-- END Custom CSS-->
+
+    {{-- Start toast and sweetalert --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    {{-- End toast and sweetalert --}}
 </head>
 
 <body class="vertical-layout vertical-menu 1-column   menu-expanded blank-page blank-page" data-open="click"
@@ -68,14 +73,13 @@
                                             @csrf
                                             <fieldset class="form-group mb-1 position-relative has-icon-left">
                                                 <input type="email" class="form-control form-control-lg input-lg"
-                                                    id="user-name" name="email" placeholder="Email " required>
+                                                    id="user-name" name="email" value="{{ old('email') }}"
+                                                    placeholder="Enter Email " required>
                                                 <div class="form-control-position">
                                                     <i class="ft-user"></i>
                                                 </div>
                                                 @error('email')
-                                                    <div class="invalid-feedback">
-                                                        {{ $message }}
-                                                    </div>
+                                                    <div class="text-danger">{{ $message }}</div>
                                                 @enderror
                                             </fieldset>
                                             <fieldset class="form-group position-relative has-icon-left">
@@ -83,9 +87,7 @@
                                                     id="user-password" name="password" placeholder="Enter Password"
                                                     required>
                                                 @error('password')
-                                                    <div class="invalid-feedback">
-                                                        {{ $message }}
-                                                    </div>
+                                                    <div class="text-danger">{{ $message }}</div>
                                                 @enderror
 
                                                 <div class="form-control-position">
@@ -130,6 +132,27 @@
     <script src="{{ asset('assets/template/app-assets/js/scripts/forms/form-login-register.js') }}"></script>
 
     <!-- END PAGE LEVEL JS-->
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    @if (session('error_message'))
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: '{{ session('error_message') }}',
+            });
+        </script>
+    @endif
+
+    @if ($errors->any())
+        @foreach ($errors->all() as $error)
+            <script>
+                toastr.error('{{ $error }}');
+            </script>
+        @endforeach
+    @endif
 </body>
 
 

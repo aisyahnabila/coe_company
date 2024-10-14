@@ -123,4 +123,13 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    'provider' => [
+        RealRashid\SweetAlert\SweetAlertServiceProvider::class,
+    ],
+
+    'aliases' => [
+        'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
+        'Auth' => Illuminate\Support\Facades\Auth::class,
+    ],
+
 ];

@@ -6,7 +6,7 @@
             <div class="col-md-12 offset">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Page Controller</h4>
+                        <h4>About Page</h4>
                     </div>
                     <div class="card-body">
                         <form action="{{ route('page.update', $about) }}" method="POST" enctype="multipart/form-data">
