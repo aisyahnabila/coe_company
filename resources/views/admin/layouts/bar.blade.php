@@ -106,3 +106,4 @@
         </ul>
     </div>
 </div>
+<script src="{{ asset('assets/template/app-assets/vendors/js/vendors.min.js') }}"></script>
