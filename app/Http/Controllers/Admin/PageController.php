@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Page;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
 class PageController extends Controller
 {
     //
@@ -25,7 +24,6 @@ class PageController extends Controller
         $about->update([
             'about' => $request->about,
         ]);
-
-        return redirect()->back()->with('success', 'About page updated successfully!');
+        return redirect()->route('page.index')->with('success', 'About page updated successfully!');
     }
 }

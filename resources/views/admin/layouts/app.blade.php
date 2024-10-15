@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
 @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -43,7 +42,7 @@
     <!-- END Page Level CSS-->
     <!-- BEGIN Custom CSS-->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/template/assets/css/style.css') }}">
-
+    <link rel="stylesheet" href="{{asset('swal2/styles.css')}}">
     <!-- END Custom CSS-->
 </head>
 
@@ -60,7 +59,7 @@
     <!-- ////////////////////////////////////////////////////////////////////////////-->
 
 
-    <footer class="footer footer-static footer-light navbar-border">
+    {{-- <footer class="footer footer-static footer-light navbar-border">
         <p class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2"><span
                 class="float-md-left d-block d-md-inline-block">Copyright &copy; 2018 <a
                     class="text-bold-800 grey darken-2"
@@ -68,10 +67,10 @@
                 </a>, All rights reserved. </span><span
                 class="float-md-right d-block d-md-inline-blockd-none d-lg-block">Hand-crafted & Made with <i
                     class="ft-heart pink"></i></span></p>
-    </footer>
+    </footer> --}}
 
     <!-- BEGIN VENDOR JS-->
-    <script src="{{ asset('assets/template/app-assets/vendors/js/vendors.min.js') }}"></script>
+    {{-- <script src="{{ asset('assets/template/app-assets/vendors/js/vendors.min.js') }}"></script> --}}
     <!-- BEGIN VENDOR JS-->
     <!-- BEGIN PAGE VENDOR JS-->
     <script src="{{ asset('assets/template/app-assets/vendors/js/charts/raphael-min.js') }}"></script>
@@ -93,7 +92,7 @@
     <!-- END ROBUST JS-->
     <!-- BEGIN PAGE LEVEL JS-->
     <script src="{{ asset('assets/template/app-assets/js/scripts/pages/dashboard-ecommerce.js') }}"></script>
-
+    {{-- <script src="{{asset('swal2/script.js')}}"></script> --}}
     <!-- END PAGE LEVEL JS-->
 </body>
 

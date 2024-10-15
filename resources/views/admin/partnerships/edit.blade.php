@@ -126,7 +126,7 @@
 
 
                             <div class="form-group text-right">
-                                <button type="submit" class="btn btn-primary">Update Partnership</button>
+                                <button type="submit" class="btn btn-primary updateConfirm">Update Partnership</button>
                                 <a href="{{ route('partnerships.index') }}" class="btn btn-secondary">Cancel</a>
                             </div>
                         </form>
@@ -135,4 +135,40 @@
             </div>
         </div>
     </div>
+
+    <script src="{{ asset('swal2/script.js') }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Attach event listener to the document or a parent container
+            document.addEventListener('click', function(event) {
+                if (event.target.classList.contains('updateConfirm')) {
+                    event.preventDefault(); // Prevent the button from immediately submitting the form
+
+                    const form = event.target.closest('form'); // Get the closest form
+                    const swalWithBootstrapButtons = Swal.mixin({
+                        customClass: {
+                            confirmButton: "btn btn-primary btn-lg ml-2",
+                            cancelButton: "btn btn-secondary btn-lg"
+                        },
+                        buttonsStyling: false
+                    });
+
+                    swalWithBootstrapButtons.fire({
+                        title: "Apakah Anda yakin?",
+                        text: "Memperbarui data sesuai yang anda inginkan",
+                        icon: "question",
+                        showCancelButton: true,
+                        confirmButtonText: "Ya",
+                        cancelButtonText: "Batal",
+                        reverseButtons: true
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            // If confirmed, submit the form
+                            form.submit();
+                        }
+                    });
+                }
+            });
+        });
+    </script>
 @endsection

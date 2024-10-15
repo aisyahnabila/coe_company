@@ -17,6 +17,11 @@
                                 <label for="title">Title</label>
                                 <input type="text" class="form-control" id="title" name="title"
                                     value="{{ old('title') }}" required>
+                                @error('title')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
 
                             <!-- Category Field -->
@@ -93,7 +98,7 @@
 
                             <!-- Submit Button -->
                             <div class="form-group text-right">
-                                <button type="submit" class="btn btn-primary">Create Article</button>
+                                <button type="submit" class="btn btn-primary btnConfirm">Create Article</button>
                                 <a href="{{ route('articles.index') }}" class="btn btn-secondary">Cancel</a>
                             </div>
 
@@ -103,7 +108,41 @@
             </div>
         </div>
     </div>
+    <script src="{{ asset('swal2/script.js') }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Attach event listener to the document or a parent container
+            document.addEventListener('click', function(event) {
+                if (event.target.classList.contains('btnConfirm')) {
+                    event.preventDefault(); // Prevent the button from immediately submitting the form
 
+                    const form = event.target.closest('form'); // Get the closest form
+                    const swalWithBootstrapButtons = Swal.mixin({
+                        customClass: {
+                            confirmButton: "btn btn-primary btn-lg ml-2",
+                            cancelButton: "btn btn-secondary btn-lg"
+                        },
+                        buttonsStyling: false
+                    });
+
+                    swalWithBootstrapButtons.fire({
+                        title: "Apakah Anda yakin?",
+                        text: "Menambahkan data sesuai yang anda inginkan",
+                        icon: "question",
+                        showCancelButton: true,
+                        confirmButtonText: "Ya",
+                        cancelButtonText: "Batal",
+                        reverseButtons: true
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            // If confirmed, submit the form
+                            form.submit();
+                        }
+                    });
+                }
+            });
+        });
+    </script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const titleInput = document.getElementById('title');
