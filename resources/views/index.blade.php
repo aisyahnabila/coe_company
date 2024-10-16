@@ -88,7 +88,7 @@
 
                                         </div>
 
-                                        <a href="#" class="btn btn-dark-blue w-100 mt-5 rounded-3">LINK REGISTRASI</a>
+                                        <a href="{{ $seminar->registration_link }}" class="btn btn-dark-blue w-100 mt-5 rounded-3">LINK REGISTRASI</a>
                                         <div class="row text-secondary mt-3">
                                             <div class="col-6 d-flex align-items-center"> <!-- Use col-6 for all sizes -->
                                                 <img class="rounded-circle me-2"
@@ -210,11 +210,11 @@
                                         <div class="text-start">
                                             <h5 class="card-title fw-bold">{{ $pengmas->title }}</h5>
                                             <p class="card-text seminar-text">
-                                                {{ Str::limit($pengmas->content, 20, '...') }}
+                                                {{ \Illuminate\Support\Str::limit($pengmas->content, 20, '...') }}
                                             </p>
                                         </div>
 
-                                        <a href="#" class="btn btn-dark-blue w-100 mt-5 rounded-3">LINK
+                                        <a href="{{ $pengmas->registration_link }}" class="btn btn-dark-blue w-100 mt-5 rounded-3">LINK
                                             REGISTRASI</a>
                                         <div class="row text-secondary mt-3">
                                             <div class="col-6 d-flex align-items-center"> <!-- Use col-6 for all sizes -->
