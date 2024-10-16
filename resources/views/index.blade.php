@@ -16,9 +16,9 @@
     </section>
 
     <!-- Info Section -->
-    <section class="info-section py-5"  id="tentang"  >
+    <section class="info-section py-5" id="tentang">
         <div class="container">
-            <div class="my-5" >
+            <div class="my-5">
                 <h3 class="fw-bold text-blue-dark text-center">TENTANG BHT</h3>
                 <div class="row content-about my-4">
                     <div class="col-md-4">
@@ -69,7 +69,7 @@
                 </div>
             </div>
             {{-- ================ SEMINAR============== --}}
-            <div >
+            <div>
                 <h3 id="seminar" class="fw-bold text-blue-dark text-center mb-5">PELATIHAN SEMINAR</h3>
                 <div class="swiper mySwiper">
 
@@ -83,8 +83,9 @@
 
                                         <div class="text-start">
                                             <h5 class="card-title fw-bold">{{ $seminar->title }}</h5>
-                                            <p class="card-text seminar-text">{{ Str::limit($seminar->content, 20, '...') }}
-                                            </p>
+                                            <p class="card-text seminar-text">
+                                                {{ \Illuminate\Support\Str::limit($seminar->content, 20, '...') }}</p>
+
                                         </div>
 
                                         <a href="#" class="btn btn-dark-blue w-100 mt-5 rounded-3">LINK REGISTRASI</a>
@@ -250,10 +251,10 @@
                     <div class="swiper-wrapper d-flex align-items-center">
                         <!-- Swiper slide with images -->
                         @foreach ($mitras as $mitra)
-                        <div class="swiper-slide">
-                            <img src=" {{ asset('storage/' . $mitra->logo_img) }}" class="mitraImg" alt="{{$mitra->partner_name}}"
-                                style="width: 100%; height: auto;">
-                        </div>
+                            <div class="swiper-slide">
+                                <img src=" {{ asset('storage/' . $mitra->logo_img) }}" class="mitraImg"
+                                    alt="{{ $mitra->partner_name }}" style="width: 100%; height: auto;">
+                            </div>
                         @endforeach
                     </div>
                 </div>

@@ -57,8 +57,8 @@
                         class="menu-title">Dashboard</span></a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('page.index') }}"><i class="icon-wrench"></i><span
-                        class="menu-title">Custom Page</span></a>
+                <a href="{{ route('page.index') }}"><i class="icon-wrench"></i><span class="menu-title">Custom
+                        Page</span></a>
             </li>
             <li class="navigation-header"><span>CONTENT</span><i class="ft-more-horizontal ft-minus"
                     data-toggle="tooltip" data-placement="right" data-original-title="Layouts"></i></li>
@@ -67,7 +67,7 @@
                 <a href="#"><i class="icon-layers"></i><span class="menu-title">Content Article</span></a>
                 <ul class="menu-content">
                     <li><a class="menu-item" href="{{ route('articles.index') }}">Daftar Artikel</a></li>
-                    <li><a class="menu-item" href="{{ route('categories.index') }}">Kategori Artikel</a></li>
+                    {{-- <li><a class="menu-item" href="{{ route('categories.index') }}">Kategori Artikel</a></li> --}}
                 </ul>
             </li>
 
