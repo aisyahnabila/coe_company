@@ -16,9 +16,9 @@
     </section>
 
     <!-- Info Section -->
-    <section class="info-section py-5">
+    <section class="info-section py-5"  id="tentang"  >
         <div class="container">
-            <div class="my-5" id="tentang">
+            <div class="my-5" >
                 <h3 class="fw-bold text-blue-dark text-center">TENTANG BHT</h3>
                 <div class="row content-about my-4">
                     <div class="col-md-4">
@@ -69,8 +69,8 @@
                 </div>
             </div>
             {{-- ================ SEMINAR============== --}}
-            <div id="training">
-                <h3 class="fw-bold text-blue-dark text-center mb-5">PELATIHAN SEMINAR</h3>
+            <div >
+                <h3 id="seminar" class="fw-bold text-blue-dark text-center mb-5">PELATIHAN SEMINAR</h3>
                 <div class="swiper mySwiper">
 
                     <div class="swiper-wrapper">
@@ -117,7 +117,7 @@
         </div>
 
         {{-- ================ KERJA SAMA ============== --}}
-        <section class="my-5  bg-dark-blue">
+        <section id="kerjasama" class="my-5  bg-dark-blue">
             <div class="container py-5">
                 <h3 class="text-white py-3 fw-bold text-center">KERJA SAMA</h3>
                 <div class="swiper mySwiper">
@@ -194,8 +194,8 @@
 
         <div class="container">
 
-            {{-- ================ SEMINAR============== --}}
-            <div class="py-5" id="training">
+            {{-- ================ PENGABDIAN============== --}}
+            <div class="py-5" id="pengabdian">
                 <h3 class="fw-bold text-blue-dark text-center mb-5">PENGABDIAN MASYARAKAT</h3>
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
@@ -242,7 +242,7 @@
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div class="container" id="mitra">
             {{-- MITRA --}}
             <div class="py-3">
                 <h3 class="fw-bold text-blue-dark text-center py-3 ">MITRA</h3>

@@ -44,7 +44,7 @@
             </div>
         </div>
     </div>
-    <script src="{{ asset('assets/template/app-assets/vendors/js/vendors.min.js') }}"></script>
+
     <script src="{{ asset('swal2/script.js') }}"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {

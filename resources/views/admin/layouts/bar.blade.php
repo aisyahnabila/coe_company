@@ -92,17 +92,6 @@
                     {{-- <li><a class="menu-item" href="{{ route('partnerships.create') }}">Tambahkan</a></li> --}}
                 </ul>
             </li>
-
-            <li class="navigation-header"><span>USER</span><i class="ft-more-horizontal ft-minus" data-toggle="tooltip"
-                    data-placement="right" data-original-title="User Settings"></i></li>
-
-            <li class="nav-item">
-                <a href="#"><i class="icon-people"></i><span class="menu-title">Akun</span></a>
-                <ul class="menu-content">
-                    {{-- <li><a class="menu-item" href="{{ route('users.index') }}">Daftar Akun</a></li>
-                    <li><a class="menu-item" href="{{ route('users.create') }}">Tambahkan Akun</a></li> --}}
-                </ul>
-            </li>
         </ul>
     </div>
 </div>
