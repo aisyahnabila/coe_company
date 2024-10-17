@@ -19,7 +19,7 @@ return new class extends Migration {
             $table->string('funder');
             $table->string('schema');
             $table->text('team');
-            $table->bigInteger('fund_amount')->change();
+            $table->bigInteger('fund_amount');
             $table->string('fund_currency');
             $table->timestamp('start_date')->nullable();
             $table->timestamp('end_date')->nullable(); // Allow NULL

@@ -16,9 +16,9 @@
     </section>
 
     <!-- Info Section -->
-    <section class="info-section py-5">
+    <section class="info-section py-5" id="tentang">
         <div class="container">
-            <div class="my-5" id="tentang">
+            <div class="my-5">
                 <h3 class="fw-bold text-blue-dark text-center">TENTANG BHT</h3>
                 <div class="row content-about my-4">
                     <div class="col-md-4">
@@ -69,8 +69,8 @@
                 </div>
             </div>
             {{-- ================ SEMINAR============== --}}
-            <div id="training">
-                <h3 class="fw-bold text-blue-dark text-center mb-5">PELATIHAN SEMINAR</h3>
+            <div>
+                <h3 id="seminar" class="fw-bold text-blue-dark text-center mb-5">PELATIHAN SEMINAR</h3>
                 <div class="swiper mySwiper">
 
                     <div class="swiper-wrapper">
@@ -83,11 +83,12 @@
 
                                         <div class="text-start">
                                             <h5 class="card-title fw-bold">{{ $seminar->title }}</h5>
-                                            <p class="card-text seminar-text">{{ Str::limit($seminar->content, 20, '...') }}
-                                            </p>
+                                            <p class="card-text seminar-text">
+                                                {{ \Illuminate\Support\Str::limit($seminar->content, 20, '...') }}</p>
+
                                         </div>
 
-                                        <a href="#" class="btn btn-dark-blue w-100 mt-5 rounded-3">LINK REGISTRASI</a>
+                                        <a href="{{ $seminar->registration_link }}" class="btn btn-dark-blue w-100 mt-5 rounded-3">LINK REGISTRASI</a>
                                         <div class="row text-secondary mt-3">
                                             <div class="col-6 d-flex align-items-center"> <!-- Use col-6 for all sizes -->
                                                 <img class="rounded-circle me-2"
@@ -117,7 +118,7 @@
         </div>
 
         {{-- ================ KERJA SAMA ============== --}}
-        <section class="my-5  bg-dark-blue">
+        <section id="kerjasama" class="my-5  bg-dark-blue">
             <div class="container py-5">
                 <h3 class="text-white py-3 fw-bold text-center">KERJA SAMA</h3>
                 <div class="swiper mySwiper">
@@ -194,8 +195,8 @@
 
         <div class="container">
 
-            {{-- ================ SEMINAR============== --}}
-            <div class="py-5" id="training">
+            {{-- ================ PENGABDIAN============== --}}
+            <div class="py-5" id="pengabdian">
                 <h3 class="fw-bold text-blue-dark text-center mb-5">PENGABDIAN MASYARAKAT</h3>
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
@@ -209,11 +210,11 @@
                                         <div class="text-start">
                                             <h5 class="card-title fw-bold">{{ $pengmas->title }}</h5>
                                             <p class="card-text seminar-text">
-                                                {{ Str::limit($pengmas->content, 20, '...') }}
+                                                {{ \Illuminate\Support\Str::limit($pengmas->content, 20, '...') }}
                                             </p>
                                         </div>
 
-                                        <a href="#" class="btn btn-dark-blue w-100 mt-5 rounded-3">LINK
+                                        <a href="{{ $pengmas->registration_link }}" class="btn btn-dark-blue w-100 mt-5 rounded-3">LINK
                                             REGISTRASI</a>
                                         <div class="row text-secondary mt-3">
                                             <div class="col-6 d-flex align-items-center"> <!-- Use col-6 for all sizes -->
@@ -242,7 +243,7 @@
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div class="container" id="mitra">
             {{-- MITRA --}}
             <div class="py-3">
                 <h3 class="fw-bold text-blue-dark text-center py-3 ">MITRA</h3>
@@ -250,10 +251,10 @@
                     <div class="swiper-wrapper d-flex align-items-center">
                         <!-- Swiper slide with images -->
                         @foreach ($mitras as $mitra)
-                        <div class="swiper-slide">
-                            <img src=" {{ asset('storage/' . $mitra->logo_img) }}" class="mitraImg" alt="{{$mitra->partner_name}}"
-                                style="width: 100%; height: auto;">
-                        </div>
+                            <div class="swiper-slide">
+                                <img src=" {{ asset('storage/' . $mitra->logo_img) }}" class="mitraImg"
+                                    alt="{{ $mitra->partner_name }}" style="width: 100%; height: auto;">
+                            </div>
                         @endforeach
                     </div>
                 </div>

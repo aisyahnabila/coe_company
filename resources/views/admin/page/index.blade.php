@@ -1,6 +1,8 @@
 @extends('admin.layouts.app')
 
 @section('admin-content')
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-bs4.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-bs4.min.js"></script>
     <div class="container mt-2">
         <div class="row">
             <div class="col-md-12 offset">
@@ -15,7 +17,7 @@
                             <!-- Partner Name Field -->
                             <div class="form-group">
                                 <label for="partner_name">About Controller</label>
-                                <textarea class="form-control" id="about" name="about" rows="4">{{ $about->about }}</textarea>
+                                <textarea class="form-control" id="summernote" name="about" rows="4">{{ $about->about }}</textarea>
                             </div>
 
                             <div class="form-group text-right">
@@ -27,7 +29,13 @@
             </div>
         </div>
     </div>
-    
+    <script>
+        $('#summernote').summernote({
+          placeholder: 'Hello Bootstrap 4',
+          tabsize: 2,
+          height: 100
+        });
+      </script>
     <script src="{{asset('swal2/script.js')}}"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {

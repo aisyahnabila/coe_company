@@ -289,7 +289,9 @@ html {
     border: none;
     /* Remove borders */
 }
-
+.navbar-hamburger{
+    border: 0px;
+}
 .custom-table td {
     padding: 2px 12px;
     /* Add padding for better spacing */

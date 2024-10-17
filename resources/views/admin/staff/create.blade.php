@@ -156,7 +156,7 @@
             </div>
         </div>
     </div>
-    
+
     <script src="{{ asset('swal2/script.js') }}"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
