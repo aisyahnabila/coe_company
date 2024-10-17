@@ -24,7 +24,7 @@
             <div class="col-md-4 text-center">
                 <h5 class="mb-3">Lokasi Kami</h5>
                 <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=#" width="100%" height="200" frameborder="0"
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7920.624389675271!2d107.62552663998876!3d-6.972446222581524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e9adf177bf8d%3A0x437398556f9fa03!2sUniversitas%20Telkom!5e0!3m2!1sid!2sid!4v1729129976759!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         style="border:0;" allowfullscreen=""></iframe>
                 </div>
             </div>
