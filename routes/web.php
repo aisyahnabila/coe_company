@@ -14,7 +14,13 @@ use Illuminate\Support\Facades\Route;
 // route for globar user
 Route::get('/', [LandigPageController::class, 'index'])->name('index');
 Route::get('/staff', [LandigPageController::class, 'staff'])->name('staff');
-
+Route::get('/dashboard', function () {
+    if (Auth::check()) {
+        return redirect('/admin/dashboard');
+    } else {
+        return redirect('/login');
+    }
+});
 // route for CMS
 
 Auth::routes();
@@ -28,4 +34,3 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('mitra', MitraController::class);
     Route::resource('page', PageController::class);
 });
-
